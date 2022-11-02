@@ -9,13 +9,19 @@
     @include mq("md") {
         display: flex;
         flex-direction: initial;
+        gap: rem(14);
     }
 }
 
 .card-list__item {
+    max-width: rem(500);
+    width: 100%;
+    margin: 0 auto;
+
     @include mq("md") {
         max-width: calc(25% - rem(14) *3 /4);
         width: 100%;
+        margin: 0;
     }
 }
 

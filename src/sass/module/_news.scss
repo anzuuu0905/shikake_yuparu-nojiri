@@ -47,14 +47,11 @@
     @include mq("md") {
         max-width: rem(340);
         width: 100%;
+        height: rem(340);
         margin-top: rem(-50);
     }
 }
 
-// .news-sns__img {
-//     width: 100%;
-//     height: auto;
-// }
 
 .news__btn {
     display: none;
@@ -62,7 +59,7 @@
     @include mq("md") {
         display: block;
         text-align: center;
-        margin-top: rem(45);
+        margin-top: rem(40);
         margin-right: rem(40);
     }
 }

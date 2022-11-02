@@ -6,7 +6,7 @@
 
     @include mq("md") {
         background-color: transparent;
-        height: rem(3900);
+        height: rem(1000);
         width: rem(230);
         overflow-y: scroll;
         -ms-overflow-style: none;
@@ -231,7 +231,14 @@
     }
 }
 
-.pc-nav__item.pc-nav__item--orange {
+.pc-nav__item:hover {
+    @include mq("md") {
+        color: $orange;
+        opacity: 1;
+    }
+}
+
+.pc-nav__item.pc-nav__item--current {
     @include mq("md") {
         color: $orange;
     }
@@ -277,7 +284,14 @@
         height: inherit;
         color: $black;
         font-size: rem(14);
-        padding: rem(5) rem(10);
+        padding: rem(5) rem(10) rem(4);
+    }
+}
+
+.pc-nav__subitem:hover {
+    @include mq("md") {
+        color: $orange;
+        opacity: 1;
     }
 }
 
@@ -313,7 +327,7 @@
 .pc-nav__contact {
     @include mq("md") {
         text-align: center;
-        margin-top: rem(20);
+        margin-top: rem(12);
     }
 }
 
@@ -323,7 +337,7 @@
         display: inline-block;
         color: $white;
         background-color: $orange;
-        padding: rem(22) rem(50);
+        padding: rem(18) rem(56);
         text-align: center;
     }
 }
@@ -337,11 +351,44 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        right: rem(15);
+        right: rem(10);
         width: 10px;
         height: 10px;
         border-top: 1px solid $white;
         border-right: 1px solid $white;
         transform: rotate(45deg);
+    }
+}
+
+.pc-nav__botton::after {
+    background: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid $orange;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+    z-index: -1;
+}
+
+.pc-nav__botton:hover {
+    color: $orange;
+}
+
+.pc-nav__botton:hover:after {
+    @include mq("md") {
+        transform: scale(1, 1);
+    }
+}
+
+.pc-nav__botton:hover:before {
+    @include mq("md") {
+        /* くの字の表示設定 */
+        border-top: 1px solid $orange;
+        border-right: 1px solid $orange;
     }
 }

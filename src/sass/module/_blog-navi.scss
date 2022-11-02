@@ -12,11 +12,21 @@
     max-width: rem(325);
     width: 100%;
 
+    @include mq("sm") {
+        max-width: rem(400);
+        width: 100%;
+    }
+
     @include mq("md") {
         gap: rem(16);
         max-width: rem(600);
         width: 100%;
     }
+}
+
+.blog-navi__items.blog-navi__items--article {
+    max-width: rem(890);
+    width: 100%;
 }
 
 .blog-navi__item {
@@ -32,14 +42,14 @@
 
 .blog-navi__item--current {
     position: relative;
-    color: $orange;
+    color: #ff7f00;
 }
 
 .blog-navi__item--current::before {
     content: '';
     width: 100%;
     height: rem(3);
-    background-color: $orange;
+    background-color: #ff7f00;
     position: absolute;
     bottom: rem(-5);
     left: 0;

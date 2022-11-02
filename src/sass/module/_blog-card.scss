@@ -69,17 +69,29 @@
 }
 
 .blog-card__author {
+    position: relative;
     display: inline-block;
     font-size: rem(14);
     line-height: 1;
     letter-spacing: -0.05em;
     text-align: left;
-    padding: rem(24) 0 0;
+    padding: rem(24) 0 0 rem(16);
     width: 100%;
 
     @include mq("md") {
-        padding: rem(20) 0 0;
+        padding: rem(20) 0 0 rem(16);
     }
+}
+
+.blog-card__author::before {
+    content: '';
+    background-image: url(../images/common/author-icon.png);
+    background-size: cover;
+    width: rem(12);
+    height: rem(18);
+    position: absolute;
+    top: 55%;
+    left: 0;
 }
 
 .blog-card__foot {
@@ -97,4 +109,9 @@
     text-align: center;
     padding: rem(5) 0;
     border: 1px solid $orange;
+}
+
+.blog-card__info.blog-card__info--recruit {
+    margin-top: auto;
+    padding: 0 rem(10) rem(8);
 }

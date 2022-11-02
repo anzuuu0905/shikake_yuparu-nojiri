@@ -2,6 +2,15 @@
 
 .search__wrap {
     margin-top: rem(-14);
+
+    @include mq("md") {
+        margin-top: rem(14);
+
+    }
+
+    @include mq("lg") {
+        margin-top: rem(-24);
+    }
 }
 
 .search_container {

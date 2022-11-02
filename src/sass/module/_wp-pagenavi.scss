@@ -1,0 +1,54 @@
+@use "global"as *;
+
+.wp-pagenavi {
+    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: rem(40);
+
+    @include mq("md") {
+        margin-top: rem(80);
+    }
+}
+
+.pagelink {
+    width: rem(40);
+    height: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: rem(24);
+    font-weight: $normal;
+    text-decoration: none;
+    padding: rem(1) rem(5);
+    margin: rem(10) rem(5) 0;
+    background-color: #fff;
+}
+
+.current.pagelink {
+    color: #fff;
+    background-color: #ff7f00;
+    border: none;
+}
+
+.page-next.pagelink {
+    position: relative;
+    // color: #666;
+    background-color: transparent;
+}
+
+.page-next.pagelink::before {
+    content: "";
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: rem(16);
+    height: rem(16);
+    border-top: 2px solid #666;
+    border-right: 2px solid #666;
+    transform: rotate(45deg);
+}

@@ -93,6 +93,7 @@
     @include mq("md") {
         font-size: rem(15);
         border-bottom: none;
+        padding: rem(12);
     }
 }
 

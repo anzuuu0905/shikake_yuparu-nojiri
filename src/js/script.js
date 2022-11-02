@@ -64,23 +64,25 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 });
 
 
-//slick
+//TOPページスライド
 $(function () {
-  var $slider5 = $('#js-slider-5');
+  var $slider5 = $('#js-slider-top');
 
   $slider5.slick({
     arrows: false, // 前・次のボタンを表示しない
     dots: true, // ドットナビゲーションを表示する
-    appendDots: $('.dots-5'), // ドットナビゲーションの生成位置を変更
+    appendDots: $('.dots-top'), // ドットナビゲーションの生成位置を変更
     fade: true, // スライド切り替えをフェード
     autoplay: false, //自動再生させない
     slidesToShow: 1, // 表示させるスライド数
+    fade: true,
+    speed: 2000,
   });
 
   /*--- プログレスバー設定 -----------------------*/
   var
     time = 2,
-    $bar = $('.dots-5 .slick-dots li.slick-active button'),
+    $bar = $('.dots-top .slick-dots li.slick-active button'),
     isPause,
     tick,
     percentTime;
@@ -94,8 +96,8 @@ $(function () {
 
   function interval() {
     if (isPause === false) {
-      percentTime += 1 / (time + 0.1);
-      $bar = $('.dots-5 .slick-dots li.slick-active button');
+      percentTime += 0.5 / (time + 0.1);
+      $bar = $('.dots-top .slick-dots li.slick-active button');
       $bar.css({
         width: percentTime + "%"
       });
@@ -107,7 +109,7 @@ $(function () {
   }
 
   function resetProgressbar() {
-    $bar = $('.dots-5 .slick-dots li.slick-active button');
+    $bar = $('.dots-top .slick-dots li.slick-active button');
     $bar.css({
       width: 0 + '%'
     });
@@ -128,5 +130,18 @@ $(function () {
   // ドットがクリックされたら再発火(スライド切り替え前のイベント)
   $slider5.on('beforeChange', function (slick, currentSlide, nextSlide) {
     startProgressbar();
+  });
+});
+
+// 売店ページスライド
+$(function () {
+  $('#js-slider-shop').slick({
+    arrows: true, // 前・次のボタンを表示する
+    dots: true, // ドットナビゲーションを表示する
+    appendDots: $('.dots-shop'), // ドットナビゲーションの生成位置を変更
+    speed: 1000, // スライドさせるスピード（ミリ秒）
+    slidesToShow: 1, // 表示させるスライド数
+    centerMode: true, // slidesToShowが奇数のとき、現在のスライドを中央に表示する
+    variableWidth: true, // スライド幅の自動計算を無効化
   });
 });
