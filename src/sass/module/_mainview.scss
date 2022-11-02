@@ -1,0 +1,40 @@
+@use "global"as *;
+
+.mainview__wrap {
+    position: relative;
+    max-width: rem(2000);
+    width: 100%;
+    height: rem(375);
+    margin: rem(45) auto 0;
+
+    @include mq("md") {
+        height: rem(450);
+        margin-top: 0;
+        margin-bottom: rem(43);
+    }
+}
+
+.mainview__text {
+    position: absolute;
+    top: rem(18);
+    right: rem(15);
+
+    @include mq("md") {
+        top: rem(15);
+        right: rem(25);
+    }
+}
+
+.mainview__title {
+    writing-mode: vertical-rl;
+    color: $white;
+    font-size: rem(30);
+    letter-spacing: 0.18em;
+    line-height: 1.6;
+    text-shadow: 1px 1px 1px #000;
+
+    @include mq("md") {
+        font-size: rem(45);
+        letter-spacing: 0.2em;
+    }
+}

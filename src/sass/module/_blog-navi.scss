@@ -1,0 +1,55 @@
+@use "global"as *;
+
+
+.blog-navi__inner {
+    margin-bottom: rem(30);
+}
+
+.blog-navi__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10) rem(20);
+    max-width: rem(325);
+    width: 100%;
+
+    @include mq("md") {
+        gap: rem(16);
+        max-width: rem(600);
+        width: 100%;
+    }
+}
+
+.blog-navi__item {
+    color: $black;
+    font-size: rem(13);
+    font-weight: $bold;
+    line-height: 1;
+
+    @include mq("md") {
+        font-size: rem(19);
+    }
+}
+
+.blog-navi__item--current {
+    position: relative;
+    color: $orange;
+}
+
+.blog-navi__item--current::before {
+    content: '';
+    width: 100%;
+    height: rem(3);
+    background-color: $orange;
+    position: absolute;
+    bottom: rem(-5);
+    left: 0;
+    right: 0;
+
+    @include mq("md") {
+        height: rem(5);
+        position: absolute;
+        bottom: rem(-8);
+        left: 0;
+        right: 0;
+    }
+}
