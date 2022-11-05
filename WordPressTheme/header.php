@@ -25,8 +25,27 @@
 </head>
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
-  <div class="grid__container">
+  <?php
+    global $home;
+    $home = esc_url(home_url('/'));
+    $facility = esc_url(home_url('/facility/')); //施設のご案内
+    $restaurant = esc_url(home_url('/restaurant/'));//レストラン味彩
+    $shop = esc_url(home_url('/shop/'));//売店
+    $bathhouse = esc_url(home_url('/bathhouse/'));//こばやしのじりの湯
+    $access = esc_url(home_url('/access/'));//アクセス情報
+    $blogs = esc_url(home_url('/blogs/'));//スタッフブログ
+    $news = esc_url(home_url('/y-news/'));//お知らせ
+    $event = esc_url(home_url('/y-event/'));//イベント情報
+    $media = esc_url(home_url('/y-media/'));//メディア掲載
+    $award = esc_url(home_url('/y-award/'));//受賞実績
+    $company = esc_url(home_url('/company/'));//運営会社
+    $recruit = esc_url(home_url('/recruit/'));//採用情報
+    $sitemap = esc_url(home_url('/sitemap/'));//サイトマップ
+    $privacypolicy = esc_url(home_url('/privacypolicy/'));//プライバシーポリシー
+    $contact = esc_url(home_url('/contact/'));//お問い合わせ
+?>
 
+<div class="grid__container">
     <header class="header header__block grid__header">
       <div class="header__inner">
         <h1 class="logo">
@@ -46,25 +65,25 @@
         <div class="header__sp-nav sp-nav js-drawer-menu">
           <div class="sp-nav__items">
             <div class="sp-nav__content">
-              <a href="#" class="sp-nav__item">TOP</a>
-              <a href="#" class="sp-nav__item">施設のご案内</a>
-              <a href="#" class="sp-nav__item">レストラン味彩 <span>-あじさい-</span></a>
-              <a href="#" class="sp-nav__item">売店</a>
-              <a href="#" class="sp-nav__item">こばやしのじりの湯</a>
+              <a href="<?php echo $home; ?>" class="sp-nav__item">TOP</a>
+              <a href="<?php echo $facility; ?>" class="sp-nav__item">施設のご案内</a>              
+              <a href="<?php echo $restaurant; ?>" class="sp-nav__item">レストラン味彩 <span>-あじさい-</span></a>
+              <a href="<?php echo $shop; ?>" class="sp-nav__item">売店</a>
+              <a href="<?php echo $bathhouse; ?>" class="sp-nav__item">こばやしのじりの湯</a>
               <span class="sp-nav__item sp-nav__item--close">宿泊（休止中。再開未定）</span>
-              <a href="#" class="sp-nav__item">アクセス情報</a>
-              <a href="#" class="sp-nav__item">スタッフブログ</a>
+              <a href="<?php echo $access; ?>" class="sp-nav__item">アクセス情報</a>
+              <a href="<?php echo $blogs; ?>" class="sp-nav__item">スタッフブログ</a>
             </div>
             <div class="sp-nav__subcontent">
-              <a href="#" class="sp-nav__subitem">お知らせ</a>
-              <a href="#" class="sp-nav__subitem">イベント情報</a>
-              <a href="#" class="sp-nav__subitem">メディア掲載</a>
-              <a href="#" class="sp-nav__subitem">受賞実績</a>
-              <a href="#" class="sp-nav__subitem">運営会社</a>
-              <a href="#" class="sp-nav__subitem">採用情報</a>
-              <a href="#" class="sp-nav__subitem">サイトマップ</a>
-              <a href="#" class="sp-nav__subitem">プライバシーポリシー</a>
-              <a href="#" class="sp-nav__subitem">お問い合わせ</a>
+              <a href="<?php echo $news; ?>" class="sp-nav__subitem">お知らせ</a>
+              <a href="<?php echo $event; ?>" class="sp-nav__subitem">イベント情報</a>
+              <a href="<?php echo $media; ?>" class="sp-nav__subitem">メディア掲載</a>
+              <a href="<?php echo $award; ?>" class="sp-nav__subitem">受賞実績</a>
+              <a href="<?php echo $company; ?>" class="sp-nav__subitem">運営会社</a>
+              <a href="<?php echo $recruit; ?>" class="sp-nav__subitem">採用情報</a>
+              <a href="<?php echo $sitemap; ?>" class="sp-nav__subitem">サイトマップ</a>
+              <a href="<?php echo $privacypolicy; ?>" class="sp-nav__subitem">プライバシーポリシー</a>
+              <a href="<?php echo $contact; ?>" class="sp-nav__subitem">お問い合わせ</a>
             </div>
             <!-- <div class="sp-nav__contact">
               <a href="#" class="sp-nav__botton">お問い合わせ</a>
@@ -75,27 +94,27 @@
         <div class="header__pc-nav pc-nav">
           <div class="pc-nav__items">
             <div class="pc-nav__content">
-              <a href="#" class="pc-nav__item pc-nav__item--orange">TOP</a>
-              <a href="#" class="pc-nav__item">施設のご案内</a>
-              <a href="#" class="pc-nav__item">レストラン味彩 <span class="pc-nav__item--small">-あじさい-</span></a>
-              <a href="#" class="pc-nav__item">売店</a>
-              <a href="#" class="pc-nav__item">こばやしのじりの湯</a>
+              <a href="<?php echo $home; ?>" class="pc-nav__item pc-nav__item--orange">TOP</a>
+              <a href="<?php echo $facility; ?>" class="pc-nav__item">施設のご案内</a>
+              <a href="<?php echo $restaurant; ?>" class="pc-nav__item">レストラン味彩 <span class="pc-nav__item--small">-あじさい-</span></a>
+              <a href="<?php echo $shop; ?>" class="pc-nav__item">売店</a>
+              <a href="<?php echo $bathhouse; ?>" class="pc-nav__item">こばやしのじりの湯</a>
               <span class="pc-nav__item pc-nav__item--close">宿泊（休止中。再開未定）</span>
-              <a href="#" class="pc-nav__item">アクセス情報</a>
-              <a href="#" class="pc-nav__item">スタッフブログ</a>
+              <a href="<?php echo $access; ?>" class="pc-nav__item">アクセス情報</a>
+              <a href="<?php echo $blogs; ?>" class="pc-nav__item">スタッフブログ</a>
             </div>
             <div class="pc-nav__subcontent">
-              <a href="#" class="pc-nav__subitem">お知らせ</a>
-              <a href="#" class="pc-nav__subitem">イベント情報</a>
-              <a href="#" class="pc-nav__subitem">メディア掲載</a>
-              <a href="#" class="pc-nav__subitem">受賞実績</a>
-              <a href="#" class="pc-nav__subitem">運営会社</a>
-              <a href="#" class="pc-nav__subitem">採用情報</a>
-              <a href="#" class="pc-nav__subitem">サイトマップ</a>
-              <a href="#" class="pc-nav__subitem">プライバシーポリシー</a>
+              <a href="<?php echo $news; ?>" class="pc-nav__subitem">お知らせ</a>
+              <a href="<?php echo $event; ?>" class="pc-nav__subitem">イベント情報</a>
+              <a href="<?php echo $media; ?>" class="pc-nav__subitem">メディア掲載</a>
+              <a href="<?php echo $award; ?>" class="pc-nav__subitem">受賞実績</a>
+              <a href="<?php echo $company; ?>" class="pc-nav__subitem">運営会社</a>
+              <a href="<?php echo $recruit; ?>" class="pc-nav__subitem">採用情報</a>
+              <a href="<?php echo $sitemap; ?>" class="pc-nav__subitem">サイトマップ</a>
+              <a href="<?php echo $privacypolicy; ?>" class="pc-nav__subitem">プライバシーポリシー</a>
             </div>
             <div class="pc-nav__contact">
-              <a href="#" class="pc-nav__botton">お問い合わせ</a>
+              <a href="<?php echo $contact; ?>" class="pc-nav__botton">お問い合わせ</a>
             </div>
           </div>
         </div>

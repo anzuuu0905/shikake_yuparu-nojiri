@@ -86,7 +86,7 @@
 }
 
 .blog-article__tag {
-    // display: inline-block;
+    display: inline-block;
     color: $blue;
     font-size: rem(14);
     line-height: 1;
@@ -100,6 +100,10 @@
     @include mq("md") {
         font-size: rem(18);
     }
+}
+
+.blog-article__tag::before{
+    content: "#";
 }
 
 // .blog-article__textbox {}
