@@ -33,7 +33,7 @@
                 <p class="access__adress">宮崎県小林市野尻町三ケ野山4347-1</p>
                 <div class="access__flex">
                   <p class="access__tel">0984-44-2210</p>
-                  <a class="access__link" href="<?php $contact ?>">お問い合わせ</a>
+                  <a class="access__link" href="<?php echo $contact ?>">お問い合わせ</a>
                 </div>
               </div>
             </div>

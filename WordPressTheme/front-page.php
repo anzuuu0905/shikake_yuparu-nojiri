@@ -93,7 +93,6 @@
                   'orderby' => 'date',//日付で並び替える
                 );
                 $the_query = new WP_Query( $args );
-
               ?>
               <!-- ループ -->
               <?php if ( $the_query->have_posts() ) : ?>
@@ -142,7 +141,7 @@
               <figure class="facility__img2">
                 <div class="facility__text">
                   <h3 class="facility__title">売店</h3>
-                  <div class="facility__link"><a class="facility__btn" href="<?php $shop; ?>">詳しく見る</a></div>
+                  <div class="facility__link"><a class="facility__btn" href="<?php echo $shop; ?>">詳しく見る</a></div>
                 </div>
               </figure>
             </div>
@@ -150,7 +149,7 @@
               <figure class="facility__img3">
                 <div class="facility__text">
                   <h3 class="facility__title">こばやしのじりの湯</h3>
-                  <div class="facility__link"><a class="facility__btn" href="<?php $bathhouse; ?>">詳しく見る</a></div>
+                  <div class="facility__link"><a class="facility__btn" href="<?php echo $bathhouse; ?>">詳しく見る</a></div>
                 </div>
               </figure>
             </div>

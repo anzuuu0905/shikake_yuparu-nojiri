@@ -70,32 +70,24 @@
             <span class="blog-connect__subtitle">Related Staff blog</span>
           </div>
           <div class="blog__items card-list">
-            <?php query_posts('posts_per_page=4'); ?>
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-              <a class="blog-card card-list__item" href="<?php the_permalink(); ?>">
-
-                <figure class="blog-card__img">
-                  <img src="
-                  <?php
-                  if (has_post_thumbnail()) :
-                    the_post_thumbnail_url('full'); 
-                  else :
+            <?php
+              $args = array(
+                'post_type' => array('post'),
+                'post_status' => array('publish'),//公開状態
+                'posts_per_page' => 4,//8件取得
+                'order' => 'DESC',//降順
+                'orderby' => 'date',//日付で並び替える
+              );
+              $the_query = new WP_Query( $args );
+            ?>
+              <!-- ループ -->
+              <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : ?>
+                  <?php 
+                    $the_query->the_post();
+                    $post_id = get_the_ID();
                   ?>
-
-                    https://yuparu-nojiri.com/wp/wp-content/uploads/2022/04/thumbnail.jpg
-                  <?php endif; ?>
-                  ">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title"><?php the_title(); ?></h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="<?php the_time('Y-m-d'); ?>"><?php the_date(); ?></time>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                    <span class="blog-card__author"><?php the_author_meta('nickname'); ?></span>
-                </div>
-              </a>
+              <?php get_template_part('parts/blog-card'); ?>
 
               <?php endwhile; ?>
             <?php endif; ?>
