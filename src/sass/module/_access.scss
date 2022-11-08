@@ -76,7 +76,7 @@
 
 .access__adress::before {
     content: "";
-    background: url(../assets/images/common/access-icon.png) no-repeat;
+    background: url(../images/common/access-icon.png) no-repeat;
     background-size: contain;
     display: inline-block;
     width: rem(15);
@@ -101,7 +101,7 @@
 
 .access__tel::before {
     content: "";
-    background: url(../assets/images/common/tel-icon.png) no-repeat;
+    background: url(../images/common/tel-icon.png) no-repeat;
     background-size: contain;
     display: inline-block;
     width: rem(15);

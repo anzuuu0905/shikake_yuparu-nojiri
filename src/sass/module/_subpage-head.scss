@@ -1,7 +1,7 @@
 @use "global"as *;
 
 .subpage-head__blog {
-    background-image: url(../assets/images/subpage/staffblog-title_sp.jpg);
+    background-image: url(../images/subpage/staffblog-title_sp.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,7 +14,7 @@
     margin-bottom: rem(10);
 
     @include mq("md") {
-        background-image: url(../assets/images/subpage/staffblog-title_pc.jpg);
+        background-image: url(../images/subpage/staffblog-title_pc.jpg);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

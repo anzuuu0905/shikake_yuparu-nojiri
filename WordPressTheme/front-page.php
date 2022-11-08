@@ -1,14 +1,29 @@
 <?php get_header(); ?>
-
-<main class="main grid__content">
+<?php
+  global $home;
+  global $facility;
+  global $restaurant;
+  global $shop;
+  global $bathhouse;
+  global $access;
+  global $blogs;
+  global $news;
+  global $event;
+  global $company;
+  global $recruit;
+  global $sitemap;
+  global $privacypolicy;
+  global $contact;
+?>
+    <main class="main grid__content">
       <section class="mainview mainview__wrap">
-        <div class="slider5-wrap">
-          <ul class="slider-5" id="js-slider-5">
-            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/mainview-img.jpg" alt=""></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-img1.jpg" alt=""></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/mainview-img.jpg" alt=""></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/mainview-img.jpg" alt=""></li>
-            <li><img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/mainview-img.jpg" alt=""></li>
+        <div class="slider-top__wrap">
+          <ul class="slider-top" id="js-slider-top">
+          <?php if(have_rows('slide_area',99)): ?>
+            <?php while(have_rows('slide_area',99)): the_row(); ?>
+              <li><img src="<?php the_sub_field('slide_img',99); ?>" alt=""></li>
+            <?php endwhile; ?>
+          <?php endif; ?>
           </ul>
         </div>
         <div class="dots-5"></div>
@@ -44,8 +59,11 @@
               <a href="#calender" class="top-info__calender">営業日カレンダーを見る</a>
             </div>
             <div class="top-info__description">
-              2022年00月00日 (水)が定休日です。<br>
-              ※なお、1日 (第1水曜日)は通常通り営業いたします。
+            <?php
+              $page_obj = get_page_by_path( 'index' );
+              $page_id = $page_obj->ID;
+              the_field('eigyo', $page_id);
+            ?>
             </div>
           </div>
         </div>
@@ -63,139 +81,38 @@
                 しています。</p>
             </div>
             <!-- ブログカードリスト -->
+            <!-- <div class="blog__items card-list card-list__pc"> -->
             <div class="blog__items card-list">
-              <a href="#" class="blog-card card-list__item">
-                <div class="blog-card__new">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/new-icon.png" alt="">
-                </div>
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-img1.jpg" alt="ブログカード1">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">アロエを増やしてみました</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-09-09">2022.09.09</time>
-                    <span class="blog-card__author">うこちゃん（浴場）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">こばやしのじりの湯</span>
-                </div>
-              </a>
-              <a href="#" class="blog-card card-list__item">
-                <div class="blog-card__new">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/new-icon.png" alt="">
-                </div>
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-img2.jpg" alt="ブログカード2">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">ペットボトルキャップ、集めてます</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-09-08">2022.09.08</time>
-                    <span class="blog-card__author">チョコミント（事務所）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">売店</span>
-                </div>
-              </a>
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-img3.jpg" alt="ブログカード3">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">栗入荷しています</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-09-07">2022.09.07</time>
-                    <span class="blog-card__author">ハル（売店）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">売店</span>
-                </div>
-              </a>
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-img4.jpg" alt="ブログカード4">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">押し花</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-09-06">2022.09.06</time>
-                    <span class="blog-card__author">ギコ（浴場）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">こばやしのじりの湯</span>
-                </div>
-              </a>
+              <?php
+                $args = array(
+                  'post_type' => array('post'),
+                  'post_status' => array('publish'),//公開状態
+                  'category__not_in' => array(1, 5),//お知らせ（y-news)、イベント情報（y-event）以外
+                  'posts_per_page' => 8,//8件取得
+                  'order' => 'DESC',//降順
+                  'orderby' => 'date',//日付で並び替える
+                );
+                $the_query = new WP_Query( $args );
+
+              ?>
+              <!-- ループ -->
+              <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : ?>
+                  <?php 
+                    $the_query->the_post();
+                    $post_id = get_the_ID();
+                  ?>
+                  <?php get_template_part('parts/blog-card'); ?>
+                <?php 
+                  endwhile;
+                  wp_reset_postdata();
+                ?>
+              <?php endif; ?>
             </div>
-            <div class="blog__items card-list card-list__pc">
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-img5.jpg" alt="ブログカード5">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">地元小林の須木栗を使って新メニューを開発しています</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-09-05">2022.09.05</time>
-                    <span class="blog-card__author">ゆうやん（レストラン 味彩）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">レストラン味彩</span>
-                </div>
-              </a>
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-img6.jpg" alt="ブログカード2">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">「ゴーヤの甘酢漬け」を作ってみませんか？</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-09-04">2022.09.04</time>
-                    <span class="blog-card__author">カモミール（駅長・事務所）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">売店</span>
-                </div>
-              </a>
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-img7.jpg" alt="ブログカード7">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">ニシモロ弁</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-09-03">2022.09.03</time>
-                    <span class="blog-card__author">きィ（浴場）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">売店</span>
-                </div>
-              </a>
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/blog-img8.jpg" alt="ブログカード8">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">9月3日(土)・4日(日)のチョウザメ三昧定食は合計10食ご用意いたします。</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-09-02">2022.09.02</time>
-                    <span class="blog-card__author">ゆうやん（レストラン 味彩）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">イベント情報</span>
-                </div>
-              </a>
-            </div>
+
             <!-- ブログリンクボタン -->
             <div class="blog__btn">
-              <a class="btn-link" href="#">もっと見る</a>
+              <a class="btn-link" href="<?php echo $blogs; ?>">もっと見る</a>
             </div>
           </div>
         </div>
@@ -217,7 +134,7 @@
               <figure class="facility__img1">
                 <div class="facility__text facility__text--ajisai">
                   <h3 class="facility__title">レストラン味彩</h3>
-                  <div class="facility__link"><a class="facility__btn" href="#">詳しく見る</a></div>
+                  <div class="facility__link"><a class="facility__btn" href="<?php echo $restaurant; ?>">詳しく見る</a></div>
                 </div>
               </figure>
             </div>
@@ -225,7 +142,7 @@
               <figure class="facility__img2">
                 <div class="facility__text">
                   <h3 class="facility__title">売店</h3>
-                  <div class="facility__link"><a class="facility__btn" href="#">詳しく見る</a></div>
+                  <div class="facility__link"><a class="facility__btn" href="<?php $shop; ?>">詳しく見る</a></div>
                 </div>
               </figure>
             </div>
@@ -233,7 +150,7 @@
               <figure class="facility__img3">
                 <div class="facility__text">
                   <h3 class="facility__title">こばやしのじりの湯</h3>
-                  <div class="facility__link"><a class="facility__btn" href="#">詳しく見る</a></div>
+                  <div class="facility__link"><a class="facility__btn" href="<?php $bathhouse; ?>">詳しく見る</a></div>
                 </div>
               </figure>
             </div>
@@ -256,35 +173,48 @@
           </div>
           <div class="news__wrapper">
             <ul class="news__lists">
-              <li class="news__list">
-                ○月の定休日は、○日(○)です。
-              </li>
-              <li class="news__list">
-                テキストが入ります。テキストが入ります。
-              </li>
-              <li class="news__list">
-                テキストが入ります。テキストが入ります。テキストが入りま
-              </li>
-              <li class="news__list">
-                テキストが入ります。テキストが入ります。テキストが入りま
-              </li>
-              <li class="news__list">
-                テキストが入ります。テキストが入ります。
-              </li>
+            <?php
+              $args = array(
+                'post_type' => array('post'),
+                'post_status' => array('publish'),//公開状態
+                // 'cat' => '1', 
+                'category_name' => 'y-news',// 表示したいカテゴリーのスラッグを指定
+                'posts_per_page' => 4,//4件取得
+                'order' => 'DESC',//降順
+                'orderby' => 'date',//日付で並び替える
+              );
+              $the_query = new WP_Query( $args );
+            ?>
+            <!-- ループ -->
+            <?php if ( $the_query->have_posts() ) : ?>
+              <?php while ( $the_query->have_posts() ) : ?>
+                <?php 
+                  $the_query->the_post();
+                ?>
+                  <li class="news__list">
+                    <a href="<?php the_permalink(); ?>">
+                      <?php the_title(); ?>
+                    </a>
+                  </li>
+
+                <?php 
+                endwhile;
+                wp_reset_postdata();
+              ?>
+            <?php endif; ?>
               <!-- ブログリンクボタン -->
               <div class="news__btn">
-                <a class="btn-link" href="#">もっと見る</a>
+                <a class="btn-link" href="<?php echo $news; ?>">もっと見る</a>
               </div>
             </ul>
             <div class="news-sns__area">
-              <picture class="news-sns__img">
-                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/top/facebook-article.jpg" media="(min-width: 768px)" /> <!-- タブレット画像 -->
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/facebook-article_sp.jpg" alt="facebook記事" />
-              </picture>
+              <iframe class="news-sns__img u-desktop" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fyuparunojiri%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=445718773341488" width="340" height="369" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+              <iframe class="news-sns__img u-mobile" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fyuparunojiri%2F&tabs=timeline&width=290&height=426&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=445718773341488" width="290" height="426" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             </div>
           </div>
         </div>
       </section>
+
       <section class="event event__block">
         <div class="event__wrapper">
           <div class="event__inner inner">
@@ -294,105 +224,40 @@
             </div>
             <!-- ブログカードリスト -->
             <div class="event__items card-list">
-              <a href="#" class="blog-card card-list__item">
-                <div class="blog-card__new">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/new-icon.png" alt="">
-                </div>
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/event-blog1.jpg" alt="イベント情報1">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">毎月第3日曜日は家庭の日です。</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-09-12">2022.09.12</time>
-                    <span class="blog-card__author">ハル（売店）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">こばやしのじりの湯</span>
-                </div>
-              </a>
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/event-blog2.jpg" alt="イベント情報2">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">毎月２６日はお風呂の日♪</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-08-18">2022.08.8</time>
-                    <span class="blog-card__author">ハル（売店）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">こばやしのじりの湯</span>
-                </div>
-              </a>
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/event-blog3.jpg" alt="イベント情報3">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">毎月第3日曜日は家庭の日です。</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-08-14">2022.08.14</time>
-                    <span class="blog-card__author">ハル（売店）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">売店</span>
-                </div>
-              </a>
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/top/event-blog4.jpg" alt="イベント情報4">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">出店中止のお知らせ！</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-07-15">2022.07.15</time>
-                    <span class="blog-card__author">カモミール（駅長・事務所）</span>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__text">売店</span>
-                </div>
-              </a>
+              <?php
+                $args = array(
+                  'post_type' => array('post'),
+                  'post_status' => array('publish'),//公開状態
+                  'category_name' => 'y-event', // 表示したいカテゴリーのスラッグを指定
+                  // 'category' => 5, 
+                  'posts_per_page' => 4,//8件取得
+                  'order' => 'DESC',//降順
+                  'orderby' => 'date',//日付で並び替える
+                );
+                $the_query = new WP_Query( $args );
+
+              ?>
+              <!-- ループ -->
+              <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : ?>
+                  <?php 
+                    $the_query->the_post();
+                    $post_id = get_the_ID();
+                  ?>
+                  <?php get_template_part('parts/blog-card'); ?>
+                <?php 
+                  endwhile;
+                  wp_reset_postdata();
+                ?>
+              <?php endif; ?>
             </div>
+
             <!-- ブログリンクボタン -->
             <div class="blog__btn">
-              <a class="btn-link" href="#">もっと見る</a>
+              <a class="btn-link" href="<?php echo $event; ?>">もっと見る</a>
             </div>
           </div>
         </div>
       </section>
-      <section class="access access__block">
-        <div class="access__inner inner">
-          <div class="access__head">
-            <div class="section__head">
-              <h2 class="section__title">アクセス情報</h2>
-              <span class="section__subtitle">Access Information</span>
-            </div>
-            <div class="access__btn">
-              <a class="btn-link__access" href="#">もっと見る</a>
-            </div>
-          </div>
-          <div class="access__text">
-            <p class="access__description">「のじりこぴあ」や「萩の茶屋」が有名な花街道、国道268号沿。75台収容の大駐車場を完備。宮崎交通のバス停もございます。</p>
-            <span class="access__root">宮崎道高原ICより県道29、R268経由で約20分 ・宮崎空港よりお車にて約70分</span>
-            <div class="access__info">
-              <p class="access__adress">宮崎県小林市野尻町三ケ野山4347-1</p>
-              <div class="access__flex">
-                <p class="access__tel">0984-44-2210</p>
-                <a class="access__link" href="#">お問い合わせ</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="access__maparea">
-          <iframe class="access__map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1692.430871289772!2d131.0815905!3d31.9646473!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353f3857a01c1eeb%3A0x3c64e421f0886e2a!2z6YGT44Gu6aeF44KG772e44Gx44KL44Gu44GY44KK!5e0!3m2!1sja!2sjp!4v1665542453198!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </section>
-    </main>
-  </div>
 
 <?php get_footer(); ?>

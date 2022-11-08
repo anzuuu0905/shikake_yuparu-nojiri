@@ -478,7 +478,7 @@ select::-ms-expand {
 }
 
 .access__adress::before {
-	background: url(../assets/images/common/access-icon.png) no-repeat;
+	background: url(../images/common/access-icon.png) no-repeat;
 	background-size: contain;
 	content: "";
 	display: inline-block;
@@ -502,7 +502,7 @@ select::-ms-expand {
 }
 
 .access__tel::before {
-	background: url(../assets/images/common/tel-icon.png) no-repeat;
+	background: url(../images/common/tel-icon.png) no-repeat;
 	background-size: contain;
 	content: "";
 	display: inline-block;
@@ -1560,7 +1560,7 @@ select::-ms-expand {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-image: url(../assets/images/top/facilityinfo-img1_sp.jpg);
+	background-image: url(../images/top/facilityinfo-img1_sp.jpg);
 	background-position: center;
 	background-size: cover;
 	display: -webkit-box;
@@ -1578,7 +1578,7 @@ select::-ms-expand {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-image: url(../assets/images/top/facilityinfo-img2_sp.jpg);
+	background-image: url(../images/top/facilityinfo-img2_sp.jpg);
 	background-position: center;
 	background-size: cover;
 	display: -webkit-box;
@@ -1596,7 +1596,7 @@ select::-ms-expand {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-image: url(../assets/images/top/facilityinfo-img3_sp.jpg);
+	background-image: url(../images/top/facilityinfo-img3_sp.jpg);
 	background-position: center;
 	background-size: cover;
 	display: -webkit-box;
@@ -1614,7 +1614,7 @@ select::-ms-expand {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-image: url(../assets/images/top/facilityinfo-img4.jpg);
+	background-image: url(../images/top/facilityinfo-img4.jpg);
 	background-position: center;
 	background-size: cover;
 	display: -webkit-box;
@@ -1818,7 +1818,7 @@ select::-ms-expand {
 }
 
 .footer__title::before {
-	background-image: url(../assets/images/common/footer-title.png);
+	background-image: url(../images/common/footer-title.png);
 	background-size: cover;
 	content: "";
 	display: block;
@@ -2821,7 +2821,7 @@ select::-ms-expand {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
-	background-image: url(../assets/images/subpage/staffblog-title_sp.jpg);
+	background-image: url(../images/subpage/staffblog-title_sp.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -2943,7 +2943,7 @@ select::-ms-expand {
 }
 
 .top-info__calender::before {
-	background-image: url(../assets/images/top/calender-icon.png);
+	background-image: url(../images/top/calender-icon.png);
 	background-size: cover;
 	content: "";
 	display: inline-block;
@@ -3019,12 +3019,12 @@ select::-ms-expand {
 	color: #fff;
 }
 
-.page-next.pagelink {
+.last {
 	background-color: transparent;
 	position: relative;
 }
 
-.page-next.pagelink::before {
+.l::before {
 	border-right: 2px solid #666;
 	border-top: 2px solid #666;
 	bottom: 0;
@@ -3479,14 +3479,14 @@ a:hover {
 }
 
 .facility__img2 {
-	background-image: url(../assets/images/top/facilityinfo-img2.jpg);
+	background-image: url(../images/top/facilityinfo-img2.jpg);
 	height: 15rem;
 	max-width: 29.8125rem;
 	width: 100%;
 }
 
 .facility__img3 {
-	background-image: url(../assets/images/top/facilityinfo-img3.jpg);
+	background-image: url(../images/top/facilityinfo-img3.jpg);
 	height: 15rem;
 	max-width: 29.8125rem;
 	width: 100%;
@@ -4019,7 +4019,7 @@ a:hover {
 }
 
 .subpage-head__blog {
-	background-image: url(../assets/images/subpage/staffblog-title_pc.jpg);
+	background-image: url(../images/subpage/staffblog-title_pc.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;

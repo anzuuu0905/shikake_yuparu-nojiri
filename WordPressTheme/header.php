@@ -20,13 +20,30 @@
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/script.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/slick.min.js"></script>
-
+  <!-- font-awesome -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
   <?php
     global $home;
+    global $facility;
+    global $restaurant;
+    global $shop;
+    global $bathhouse;
+    global $access;
+    global $blogs;
+    global $news;
+    global $event;
+    global $media;
+    global $award;
+    global $company;
+    global $recruit;
+    global $sitemap;
+    global $privacypolicy;
+    global $contact;
+
     $home = esc_url(home_url('/'));
     $facility = esc_url(home_url('/facility/')); //施設のご案内
     $restaurant = esc_url(home_url('/restaurant/'));//レストラン味彩
@@ -49,9 +66,9 @@
     <header class="header header__block grid__header">
       <div class="header__inner">
         <h1 class="logo">
-          <a href="#" class="logo__link">
+          <a href="<?php $home ?>" class="logo__link">
             <picture>
-              <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/common/header-logo_pc.svg" media="(min-width: 768px)" /> <!-- タブレット画像 -->
+              <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/common/header-logo_pc.svg" media="(min-width: 768px)" > <!-- タブレット画像 -->
               <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/header-logo_sp.svg" alt="ゆ〜ぱるのじり" />
             </picture>
           </a>
@@ -85,9 +102,6 @@
               <a href="<?php echo $privacypolicy; ?>" class="sp-nav__subitem">プライバシーポリシー</a>
               <a href="<?php echo $contact; ?>" class="sp-nav__subitem">お問い合わせ</a>
             </div>
-            <!-- <div class="sp-nav__contact">
-              <a href="#" class="sp-nav__botton">お問い合わせ</a>
-            </div> -->
           </div>
         </div>
         <!-- pc ヘッダーナビ -->

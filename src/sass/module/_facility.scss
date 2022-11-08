@@ -56,7 +56,7 @@
 }
 
 .facility__img1 {
-    background-image: url(../assets/images/top/facilityinfo-img1_sp.jpg);
+    background-image: url(../images/top/facilityinfo-img1_sp.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -73,7 +73,7 @@
 }
 
 .facility__img2 {
-    background-image: url(../assets/images/top/facilityinfo-img2_sp.jpg);
+    background-image: url(../images/top/facilityinfo-img2_sp.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -83,7 +83,7 @@
     align-items: center;
 
     @include mq("md") {
-        background-image: url(../assets/images/top/facilityinfo-img2.jpg);
+        background-image: url(../images/top/facilityinfo-img2.jpg);
         max-width: rem(477);
         width: 100%;
         height: rem(240);
@@ -91,7 +91,7 @@
 }
 
 .facility__img3 {
-    background-image: url(../assets/images/top/facilityinfo-img3_sp.jpg);
+    background-image: url(../images/top/facilityinfo-img3_sp.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -101,7 +101,7 @@
     align-items: center;
 
     @include mq("md") {
-        background-image: url(../assets/images/top/facilityinfo-img3.jpg);
+        background-image: url(../images/top/facilityinfo-img3.jpg);
         max-width: rem(477);
         width: 100%;
         height: rem(240);
@@ -110,7 +110,7 @@
 
 .facility__img4 {
     position: relative;
-    background-image: url(../assets/images/top/facilityinfo-img4.jpg);
+    background-image: url(../images/top/facilityinfo-img4.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;

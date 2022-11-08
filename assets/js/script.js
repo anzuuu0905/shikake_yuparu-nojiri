@@ -53,7 +53,9 @@ jQuery(function ($) {
 
   $(document).on('click', 'a[href*="#"]', function () {
     var time = 400;
-    var header = $('header').innerHeight();
+    // headerサイズが大きいため0とする
+    // let header = $('header').innerHeight();
+    var header = 0;
     var target = $(this.hash);
     if (!target.length) return;
     var targetY = target.offset().top - header;

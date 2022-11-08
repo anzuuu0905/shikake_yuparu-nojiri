@@ -33,13 +33,13 @@
     border: none;
 }
 
-.page-next.pagelink {
+.last {
     position: relative;
     // color: #666;
     background-color: transparent;
 }
 
-.page-next.pagelink::before {
+.l::before {
     content: "";
     margin: auto;
     position: absolute;
