@@ -244,10 +244,9 @@
     }
 }
 
-.pc-nav__item--small {
+.pc-nav__item--small.pc-nav__item--current {
     @include mq("md") {
-        color: $black;
-        font-size: rem(14);
+        color: $orange;
     }
 }
 
@@ -336,8 +335,9 @@
         position: relative;
         display: inline-block;
         color: $white;
+        font-size: rem(18);
         background-color: $orange;
-        padding: rem(18) rem(56);
+        padding: rem(18) rem(50);
         text-align: center;
     }
 }
