@@ -1,4 +1,3 @@
-  <!-- accessページ以外表示することになるか START-->
         <?php 
           global $home;
           global $facility;
@@ -15,6 +14,7 @@
           global $privacypolicy;
           global $contact;
         ?>
+        <?php if(!is_page('access')): ?>
         <section class="access access__block">
           <div class="access__inner inner">
             <div class="access__head">
@@ -42,7 +42,7 @@
             <iframe class="access__map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1692.430871289772!2d131.0815905!3d31.9646473!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x353f3857a01c1eeb%3A0x3c64e421f0886e2a!2z6YGT44Gu6aeF44KG772e44Gx44KL44Gu44GY44KK!5e0!3m2!1sja!2sjp!4v1665542453198!5m2!1sja!2sjp" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </section>
-        <!-- accessページ以外表示することになるか END-->
+        <?php endif; ?>
       </main>
     </div>
     <footer class="footer footer__block grid__footer">
