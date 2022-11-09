@@ -109,12 +109,9 @@
               the_field('eigyo', $page_id);
             ?>
             </div>
-
-          <!-- <p class="footer__message">2022年00月00日 (水)が定休日です。<br>
-            ※なお、1日 (第1水曜日)は通常通り営業いたします。</p> -->
-          <!-- XO Event Calendar プラグイン -->
           <div class="footer-calender__area">
-            <?php echo do_shortcode( '[xo_event_calendar holidays="regular-holiday" navigation="false" months="2"]' ); ?>
+          <!-- XO Event Calendar プラグイン -->
+          <?php echo do_shortcode( '[xo_event_calendar holidays="regular-holiday" navigation="false" months="2"]' ); ?>
           </div>
 
           <div class="footer-link__wrapper footer__links">

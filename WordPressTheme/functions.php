@@ -48,7 +48,14 @@ function my_script_init()
 
 	// // slickの読み込み
 	// wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', '1.0.1' , false);
-
+	/*
+  * jsで使えるようにテンプレートパスとホームURLをローカライズ
+  **/
+	$tmp_path_arr = array(
+    'temp_uri' => get_template_directory_uri(),
+    'home_url' => home_url()
+  );
+  wp_localize_script( 'my', 'tmp_path', $tmp_path_arr );
 
 }
 add_action('wp_enqueue_scripts', 'my_script_init');

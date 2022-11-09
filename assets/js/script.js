@@ -2,6 +2,7 @@
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 jQuery(function ($) {
+  var _$slider5$slick;
   // この中であればWordpressでも「$」が使用可能になる
 
   var topBtn = $('.pagetop');
@@ -25,16 +26,6 @@ jQuery(function ($) {
     }, 300, 'swing');
     return false;
   });
-
-  //ドロワーメニュー
-  // $("#MenuButton").click(function () {
-  //   // $(".l-drawer-menu").toggleClass("is-show");
-  //   // $(".p-drawer-menu").toggleClass("is-show");
-  //   $(".js-drawer-open").toggleClass("open");
-  //   $(".drawer-menu").toggleClass("open");
-  //   $("html").toggleClass("is-fixed");
-
-  // });
 
   //ナビバートグル
   $('.js-hamburger').on('click', function () {
@@ -64,11 +55,8 @@ jQuery(function ($) {
     }, time, 'swing');
     return false;
   });
-});
 
-//TOPページスライド
-$(function () {
-  var _$slider5$slick;
+  //TOPページスライド
   var $slider5 = $('#js-slider-top');
   $slider5.slick((_$slider5$slick = {
     arrows: false,
@@ -132,23 +120,82 @@ $(function () {
   $slider5.on('beforeChange', function (slick, currentSlide, nextSlide) {
     startProgressbar();
   });
-});
 
-// 売店ページスライド
-$(function () {
-  $('#js-slider-shop').slick({
-    arrows: true,
-    // 前・次のボタンを表示する
-    dots: true,
-    // ドットナビゲーションを表示する
-    appendDots: $('.dots-shop'),
-    // ドットナビゲーションの生成位置を変更
+  // 売店ページ　スライド
+  $('.js-subpage__slick').slick({
+    autoplay: true,
+    //自動再生
+    autoplaySpeed: 2000,
+    //自動再生のスピード
     speed: 1000,
-    // スライドさせるスピード（ミリ秒）
-    slidesToShow: 1,
-    // 表示させるスライド数
-    centerMode: true,
-    // slidesToShowが奇数のとき、現在のスライドを中央に表示する
-    variableWidth: true // スライド幅の自動計算を無効化
+    //スライドするスピード
+    dots: true,
+    //スライド下のドット
+    infinite: true,
+    //永久にループさせる
+    prevArrow: '<img src="./images/common/slick-arrow1.png" alt="" class="slide-arrow prev-arrow">',
+    nextArrow: '<img src="./images/common/slick-arrow2.png" alt="" class="slide-arrow next-arrow">'
+  });
+
+  //アコーディオンをクリックした時の動作
+  $('.js-accordion__title').on('click', function () {
+    //タイトル要素をクリックしたら
+    var findElm = $(this).next(".js-accordion__box"); //直後のアコーディオンを行うエリアを取得し
+    $(findElm).slideToggle(); //アコーディオンの上下動作
+
+    if ($(this).hasClass('close')) {
+      //タイトル要素にクラス名closeがあれば
+      $(this).removeClass('close'); //クラス名を除去し
+    } else {
+      //それ以外は
+      $(this).addClass('close'); //クラス名closeを付与
+    }
+  });
+
+  //ページが読み込まれた際にopenクラスをつけ、openがついていたら開く動作※不必要なら下記全て削除
+  $(window).on('load', function () {
+    console.log('click');
+    $('.accordion__area li:first-of-type section').addClass("open"); //accordion-areaのはじめのliにあるsectionにopenクラスを追加
+    $(".open").each(function (index, element) {
+      //openクラスを取得
+      var Title = $(element).children('.title'); //openクラスの子要素のtitleクラスを取得
+      $(Title).addClass('close'); ///タイトルにクラス名closeを付与し
+      var Box = $(element).children('.box'); //openクラスの子要素boxクラスを取得
+      $(Box).slideDown(500); //アコーディオンを開く
+    });
   });
 });
+
+var wp_temp_uri = tmp_path.temp_uri;
+// レストランページ　スライド
+$(function () {
+  function sliderSetting() {
+    var width = $(window).width();
+    if (width <= 767) {
+      $('.js-restaurant__slick').not('.slick-initialized').slick({
+        autoplay: true,
+        //自動再生
+        autoplaySpeed: 3000,
+        //自動再生のスピード
+        speed: 1000,
+        //スライドするスピード
+        dots: true,
+        //スライド下のドット
+        infinite: true,
+        //永久にループさせる
+        // arrows: true,
+        // prevArrow: '<img src="' + wp_temp_uri + '/assets/images/common/slick-arrow1.png" alt="" class="slide-arrow prev-arrow">',
+        // nextArrow: '<img src="' + wp_temp_uri + '/assets/common/slick-arrow2.png" alt="" class="slide-arrow next-arrow">',      
+        centerMode: true,
+        centerPadding: "15%"
+      });
+    } else {
+      $('.js-restaurant__slick.slick-initialized').slick('unslick');
+    }
+  }
+  sliderSetting();
+  $(window).resize(function () {
+    sliderSetting();
+  });
+});
+$(function () {});

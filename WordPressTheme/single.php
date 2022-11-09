@@ -63,49 +63,6 @@
       </section>
       <!-- 関連スタッフブログ -->
       <!-- ブログカードリスト -->
-      <div class="blog-connect__links">
-        <div class="blog-connect__inner inner">
-          <div class="blog-connect__top">
-            <h2 class="blog-connect__title">関連スタッフブログ</h2>
-            <span class="blog-connect__subtitle">Related Staff blog</span>
-          </div>
-          <div class="blog__items card-list">
-            <?php
-              $categories = get_the_category($post->ID);
-              $cat_id = array();
-              foreach( $categories as $category ) {
-                array_push($cat_id, $category -> cat_ID);
-              }
-              $args = array(
-                'post_type' => array('post'),
-                'post_status' => array('publish'),//公開状態
-                'posts_per_page' => 4,//8件取得
-                'post__not_in' =>array( $post->ID ), //現在の記事は含めない
-                'category__in' => $cat_id,
-                'order' => 'DESC',//降順
-                'orderby' => 'date',//日付で並び替える
-              );
-              $the_query = new WP_Query( $args );
-              // var_dump($the_query);
-            ?>
-              <!-- ループ -->
-              <?php if ( $the_query->have_posts() ) : ?>
-                <?php while ( $the_query->have_posts() ) : ?>
-                  <?php 
-                    $the_query->the_post();
-                    $post_id = get_the_ID();
-                  ?>
-              <?php get_template_part('parts/blog-card'); ?>
-
-              <?php endwhile; ?>
-            <?php endif; ?>
-          </div>
-
-          <!-- ブログリンクボタン -->
-          <div class="blog__btn">
-            <a class="btn-link" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">もっと見る</a>
-          </div>
-        </div>
-      </div>
+      <?php get_template_part('parts/blog-connect'); ?>
 
 <?php get_footer(); ?>
