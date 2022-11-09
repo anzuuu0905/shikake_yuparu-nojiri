@@ -71,14 +71,22 @@
           </div>
           <div class="blog__items card-list">
             <?php
+              $categories = get_the_category($post->ID);
+              $cat_id = array();
+              foreach( $categories as $category ) {
+                array_push($cat_id, $category -> cat_ID);
+              }
               $args = array(
                 'post_type' => array('post'),
                 'post_status' => array('publish'),//公開状態
                 'posts_per_page' => 4,//8件取得
+                'post__not_in' =>array( $post->ID ), //現在の記事は含めない
+                'category__in' => $cat_id,
                 'order' => 'DESC',//降順
                 'orderby' => 'date',//日付で並び替える
               );
               $the_query = new WP_Query( $args );
+              // var_dump($the_query);
             ?>
               <!-- ループ -->
               <?php if ( $the_query->have_posts() ) : ?>

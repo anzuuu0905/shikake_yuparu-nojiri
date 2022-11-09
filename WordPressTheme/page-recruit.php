@@ -1,4 +1,13 @@
 <?php get_header(); ?>
+<main class="main grid__content">
+      <section class="subpage-head__common">
+        <div class="subpage-head__text">
+          <h1 class="subpage__title">採用情報</h1>
+          <span class="subpage__subtitle">Recruit</span>
+        </div>
+      </section>
+      <!-- パンくずリスト -->
+      <?php get_template_part('parts/breadcrumb'); ?>
 
       <section class="recruit company_block">
         <div class="recruit__wrapper">

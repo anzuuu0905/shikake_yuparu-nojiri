@@ -108,14 +108,14 @@
         <div class="header__pc-nav pc-nav">
           <div class="pc-nav__items">
             <div class="pc-nav__content">
-              <a href="<?php echo $home; ?>" class="pc-nav__item pc-nav__item--orange">TOP</a>
-              <a href="<?php echo $facility; ?>" class="pc-nav__item">施設のご案内</a>
-              <a href="<?php echo $restaurant; ?>" class="pc-nav__item">レストラン味彩 <span class="pc-nav__item--small">-あじさい-</span></a>
-              <a href="<?php echo $shop; ?>" class="pc-nav__item">売店</a>
-              <a href="<?php echo $bathhouse; ?>" class="pc-nav__item">こばやしのじりの湯</a>
+              <a href="<?php echo $home; ?>" class="pc-nav__item <?php if(is_front_page()): ?>pc-nav__item--orange <?php endif; ?>">TOP</a>
+              <a href="<?php echo $facility; ?>" class="pc-nav__item <?php if(is_page('facility')): ?>pc-nav__item--orange <?php endif; ?>">施設のご案内</a>
+              <a href="<?php echo $restaurant; ?>" class="pc-nav__item <?php if(is_page('restaurant')): ?>pc-nav__item--orange <?php endif; ?>">レストラン味彩 <span class="pc-nav__item--small">-あじさい-</span></a>
+              <a href="<?php echo $shop; ?>" class="pc-nav__item <?php if(is_page('shop')): ?>pc-nav__item--orange <?php endif; ?>">売店</a>
+              <a href="<?php echo $bathhouse; ?>" class="pc-nav__item <?php if(is_page('bathhouse')): ?>pc-nav__item--orange <?php endif; ?>">こばやしのじりの湯</a>
               <span class="pc-nav__item pc-nav__item--close">宿泊（休止中。再開未定）</span>
-              <a href="<?php echo $access; ?>" class="pc-nav__item">アクセス情報</a>
-              <a href="<?php echo $blogs; ?>" class="pc-nav__item">スタッフブログ</a>
+              <a href="<?php echo $access; ?>" class="pc-nav__item <?php if(is_page('access')): ?>pc-nav__item--orange <?php endif; ?>">アクセス情報</a>
+              <a href="<?php echo $blogs; ?>" class="pc-nav__item <?php if(!is_front_page() && get_post_type() === 'post'): ?>pc-nav__item--orange <?php endif; ?>">スタッフブログ</a>
             </div>
             <div class="pc-nav__subcontent">
               <a href="<?php echo $news; ?>" class="pc-nav__subitem">お知らせ</a>
@@ -124,11 +124,11 @@
               <a href="<?php echo $award; ?>" class="pc-nav__subitem">受賞実績</a>
               <a href="<?php echo $company; ?>" class="pc-nav__subitem">運営会社</a>
               <a href="<?php echo $recruit; ?>" class="pc-nav__subitem">採用情報</a>
-              <a href="<?php echo $sitemap; ?>" class="pc-nav__subitem">サイトマップ</a>
-              <a href="<?php echo $privacypolicy; ?>" class="pc-nav__subitem">プライバシーポリシー</a>
+              <a href="<?php echo $sitemap; ?>" class="pc-nav__subitem <?php if(is_page('sitemap')): ?>pc-nav__item--orange <?php endif; ?>">サイトマップ</a>
+              <a href="<?php echo $privacypolicy; ?>" class="pc-nav__subitem <?php if(is_page('privacypolicy')): ?>pc-nav__item--orange <?php endif; ?>">プライバシーポリシー</a>
             </div>
             <div class="pc-nav__contact">
-              <a href="<?php echo $contact; ?>" class="pc-nav__botton">お問い合わせ</a>
+              <a href="<?php echo $contact; ?>" class="pc-nav__botton <?php if(is_page('contact')): ?>pc-nav__item--orange <?php endif; ?>">お問い合わせ</a>
             </div>
           </div>
         </div>
