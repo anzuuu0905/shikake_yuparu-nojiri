@@ -37,29 +37,24 @@ function my_script_init()
 
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/assets/css/styles.css', array(), '', 'all' );
 
-	// wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), '3.6.1', false );
-	// wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.min.js', array('jquery'), '', false );
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), '3.6.1', false );
 
-	// // // slickの読み込み
-	// wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), '', false );
+	// wp_enqueue_script( 'script', 'https://kenwheeler.github.io/slick/slick/slick_bk.js', array('jquery'), '', false );
+	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.min.js', array('jquery'), '', false );
+	// slickの読み込み
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.js', array('jquery'), '', false );
 
-	// wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', array());
-	// wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.min.js', array('jquery'), '1.0.1', false);
-
-	// // slickの読み込み
-	// wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', '1.0.1' , false);
-	/*
-  * jsで使えるようにテンプレートパスとホームURLをローカライズ
+	
+	/** 
+	 * jsで使えるようにテンプレートパスとホームURLをローカライズ
   **/
 	$tmp_path_arr = array(
     'temp_uri' => get_template_directory_uri(),
     'home_url' => home_url()
   );
-  wp_localize_script( 'my', 'tmp_path', $tmp_path_arr );
-
+  wp_localize_script( 'script', 'tmp_path', $tmp_path_arr );
 }
 add_action('wp_enqueue_scripts', 'my_script_init');
-
 
 
 

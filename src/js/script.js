@@ -121,6 +121,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     startProgressbar();
   });
 
+  var wp_temp_uri = tmp_path.temp_uri;
   // 売店ページ　スライド
   $('.js-subpage__slick').slick({
     autoplay: true, //自動再生
@@ -128,8 +129,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     speed: 1000, //スライドするスピード
     dots: true, //スライド下のドット
     infinite: true, //永久にループさせる
-    prevArrow: '<img src="./images/common/slick-arrow1.png" alt="" class="slide-arrow prev-arrow">',
-    nextArrow: '<img src="./images/common/slick-arrow2.png" alt="" class="slide-arrow next-arrow">'
+    prevArrow: '<img src="' + wp_temp_uri + '/assets/images/common/slick-arrow1.png" alt="" class="slide-arrow prev-arrow">',
+    nextArrow: '<img src="' + wp_temp_uri + '/assets/images/common/slick-arrow2.png" alt="" class="slide-arrow next-arrow">', 
   });
 
 
@@ -147,7 +148,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
   //ページが読み込まれた際にopenクラスをつけ、openがついていたら開く動作※不必要なら下記全て削除
   $(window).on('load', function () {
-    console.log('click');
     $('.accordion__area li:first-of-type section').addClass("open"); //accordion-areaのはじめのliにあるsectionにopenクラスを追加
     $(".open").each(function (index, element) { //openクラスを取得
       var Title = $(element).children('.title'); //openクラスの子要素のtitleクラスを取得
@@ -157,11 +157,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
   });
 
-});
-
-var wp_temp_uri = tmp_path.temp_uri;
-// レストランページ　スライド
-$(function () {
+  // レストランページ　スライド
   function sliderSetting() {
     var width = $(window).width();
 
@@ -172,9 +168,8 @@ $(function () {
         speed: 1000, //スライドするスピード
         dots: true, //スライド下のドット
         infinite: true, //永久にループさせる
-        // arrows: true,
-        // prevArrow: '<img src="' + wp_temp_uri + '/assets/images/common/slick-arrow1.png" alt="" class="slide-arrow prev-arrow">',
-        // nextArrow: '<img src="' + wp_temp_uri + '/assets/common/slick-arrow2.png" alt="" class="slide-arrow next-arrow">',      
+        prevArrow: '<img src="' + wp_temp_uri + '/assets/images/common/slick-arrow1.png" alt="" class="slide-arrow prev-arrow">',
+        nextArrow: '<img src="' + wp_temp_uri + '/assets/images/common/slick-arrow2.png" alt="" class="slide-arrow next-arrow">',         
         centerMode: true,
         centerPadding: "15%"
       });
@@ -189,9 +184,4 @@ $(function () {
     sliderSetting();
   });
 });
-
-$(function(){
-
-});
-
 

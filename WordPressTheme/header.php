@@ -17,9 +17,9 @@
   <link rel="stylesheet" href="./slick/slick-theme.css"> -->
   <!-- JavaScript -->
   <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.min.js"></script>
+  <!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.min.js"></script>
   <script src="<?php echo get_template_directory_uri(); ?>/assets/js/script.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/slick.min.js"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/slick.min.js"></script> -->
   <!-- font-awesome -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <?php wp_head(); ?>
