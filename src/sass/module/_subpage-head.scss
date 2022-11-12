@@ -1,10 +1,7 @@
 @use "global"as *;
 
-.subpage-head__blog {
-    background-image: url(../images/subpage/staffblog-title_sp.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
+.subpage-head__common {
     width: 100%;
     height: rem(125);
     margin-top: rem(45);
@@ -12,39 +9,29 @@
     align-items: center;
     justify-content: center;
     margin-bottom: rem(10);
-
-    @include mq("md") {
-        background-image: url(../images/subpage/staffblog-title_pc.jpg);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: rem(250);
-        margin-bottom: rem(18);
-    }
 }
 
 .subpage-head__text {
-    color: $white;
+    color: $black;
     text-align: center;
 }
 
 .subpage__title {
-    font-size: rem(22);
+    font-size: rem(24);
     line-height: 1;
 
     @include mq("md") {
-        font-size: rem(40);
+        font-size: rem(44);
     }
 }
 
 .subpage__subtitle {
     display: inline-block;
-    font-size: rem(11);
+    font-size: rem(12);
     line-height: 1;
 
     @include mq("md") {
-        font-size: rem(18);
+        font-size: rem(21);
         margin-top: rem(17);
     }
 }

@@ -244,6 +244,12 @@
     }
 }
 
+.pc-nav__subitem.pc-nav__subitem--current {
+    @include mq("md") {
+        color: $orange;
+    }
+}
+
 .pc-nav__item--small.pc-nav__item--current {
     @include mq("md") {
         color: $orange;
@@ -352,8 +358,8 @@
         top: 0;
         bottom: 0;
         right: rem(10);
-        width: 10px;
-        height: 10px;
+        width: rem(10);
+        height: rem(10);
         border-top: 1px solid $white;
         border-right: 1px solid $white;
         transform: rotate(45deg);
