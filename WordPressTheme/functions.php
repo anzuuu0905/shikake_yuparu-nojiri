@@ -42,7 +42,7 @@ function my_script_init()
 	// wp_enqueue_script( 'script', 'https://kenwheeler.github.io/slick/slick/slick_bk.js', array('jquery'), '', false );
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.min.js', array('jquery'), '', false );
 	// slickの読み込み
-	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.js', array('jquery'), '', false );
+	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), '', false );
 
 	
 	/** 

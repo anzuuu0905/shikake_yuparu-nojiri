@@ -324,10 +324,6 @@ select::-ms-expand {
 	opacity: 0.75;
 }
 
-.slider.slick-initialized {
-	display: block; /*slick-initializedが付与されたら表示*/
-}
-
 /* Slider */
 
 .slick-slider {
