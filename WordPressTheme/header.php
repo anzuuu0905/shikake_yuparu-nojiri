@@ -10,18 +10,8 @@
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- ファビコン -->
-  <!-- <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/common/favicon.ico" /> -->
-  <!-- css -->
-  <!-- <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./slick/slick.css">
-  <link rel="stylesheet" href="./slick/slick-theme.css"> -->
-  <!-- JavaScript -->
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> -->
-  <!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/script.min.js"></script>
-  <script src="<?php echo get_template_directory_uri(); ?>/assets/js/slick.min.js"></script> -->
-  <!-- font-awesome -->
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/common/favicon.ico" />
+
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

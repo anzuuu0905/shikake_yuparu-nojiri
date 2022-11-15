@@ -36,10 +36,11 @@ function my_script_init()
 {
 
 	wp_enqueue_style( 'my', get_template_directory_uri() . '/assets/css/styles.css', array(), '', 'all' );
+// Font Awesome
+	wp_enqueue_style( 'awesome', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), '', 'all' );
 
 	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', array(), '3.6.1', false );
 
-	// wp_enqueue_script( 'script', 'https://kenwheeler.github.io/slick/slick/slick_bk.js', array('jquery'), '', false );
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.min.js', array('jquery'), '', false );
 	// slickの読み込み
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), '', false );
@@ -174,50 +175,3 @@ function post_has_archive( $args, $post_type ) {
 	return $args;
 }
 add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
-
-// add_action('bcn_after_fill', 'bc_limit');
-// function bc_limit ($trail) {
-//   $max = count($trail->breadcrumbs);
-//   for ($i = 3; $i < $max - 1; $i++) {
-//     unset($trail -> trail[$i]);
-// 		var_dump($trail -> trail[$i]);
-//   }
-// }
-
-// add_action( 'bcn_after_fill', function ( $breadcrumb ) {
-// 	if ( count($breadcrumb->trail) > 0 ) {
-// 			for ( $i = 0; $i < count($breadcrumb->trail); $i++ ) {
-// 				var_dump($breadcrumb->trail[$i]);
-// 				if(mb_substr($breadcrumb->trail[$i]->get_title(), 0, 1) == 'y' && mb_substr($breadcrumb->trail[$i]->get_title(), 2, 1) == '-') {
-// 						$breadcrumb->trail[$i]->set_template( '' );
-// 					}
-// 			}
-// 	}
-// 	return $breadcrumb;
-// } );
-// function my_static_breadcrumb_adder( $breadcrumb_trail ) {
-// // var_dump($breadcrumb_trail);
-// if(is_archive() || is_single() || is_search()){
-//   if (is_post_type_archive('post')) { // デフォルトの投稿一覧ページの場合
-
-//     $item = new bcn_breadcrumb('スタッフブログ', null, array('post'));
-
-//   } elseif (get_post_type() === 'post') { // デフォルトの投稿ページの場合
-
-//     $item = new bcn_breadcrumb('スタッフブログ', null, array('post'), home_url('blogs/'), null, true);
-
-//   }
-
-//   $stuck = array_pop( $breadcrumb_trail->breadcrumbs ); // HOME 一時退避
-// 	// var_dump($item);
-// 	if(is_null($item)){
-//   	$breadcrumb_trail->breadcrumbs[] = $stuck; // HOME 戻す
-// 	}else{
-
-// 		var_dump($item);
-//   	$breadcrumb_trail->breadcrumbs[] = $item; // 制作実績 追加
-// 	}
-// }
-// }
-// add_action('bcn_after_fill', 'my_static_breadcrumb_adder');
-

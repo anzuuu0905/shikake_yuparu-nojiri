@@ -17,20 +17,20 @@ Template Name: ブログカード
   <?php endif;?>
 
     <?php
-	if ( has_post_thumbnail() ){
-		$image_info = getimagesize(get_the_post_thumbnail_url());
-		$image_width = $image_info[0];
-		$image_height = $image_info[1];
-		if($image_width > $image_height){
-			$class_name ='cover';
-		}else{
-			$class_name ='contain';
-		}
-	}else{
-		$class_name ='cover';
-	}
+	// if ( has_post_thumbnail() ){
+	// 	$image_info = getimagesize(get_the_post_thumbnail_url());
+	// 	$image_width = $image_info[0];
+	// 	$image_height = $image_info[1];
+	// 	if($image_width > $image_height){
+	// 		$class_name ='cover';
+	// 	}else{
+	// 		$class_name ='contain';
+	// 	}
+	// }else{
+	// 	$class_name ='cover';
+	// }
 ?>
-  <figure class="blog-card__img <?php echo $class_name; ?>">
+  <figure class="blog-card__img <?php //echo $class_name; ?>">
   <img src="
     <?php
     if (has_post_thumbnail()) :

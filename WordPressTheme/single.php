@@ -32,16 +32,9 @@
                 <span>Share!!</span>
               </div>
               <div class="blog-article__snslist">
-                <a rel="noreferrer noopener" href="#" target="_blank"><img src="./images/common/sns01.jpeg" alt=""></a>
-                <a rel="noreferrer noopener" href="#" target="_blank"><img src="./images/common/sns02.jpeg" alt=""></a>
-                <a rel="noreferrer noopener" href="#" target="_blank"><img src="./images/common/sns03.jpeg" alt=""></a>
-                <a rel="noreferrer noopener" href="#" target="_blank"><img src="./images/common/sns04.jpeg" alt=""></a>
-                <a rel="noreferrer noopener" href="#" target="_blank"><img src="./images/common/sns05.jpeg" alt=""></a>
-                <a rel="noreferrer noopener" href="#" target="_blank"><img src="./images/common/sns06.jpeg" alt=""></a>
-                <a rel="noreferrer noopener" href="#" target="_blank"><img src="./images/common/sns07.jpeg" alt=""></a>
+                <?php echo do_shortcode('[addtoany]'); ?>
               </div>
             </div>
-
             <div class="blog-article__author blog-author__block">
               <div class="blog-author__wrap">
                 <div class="blog-author__namebox">

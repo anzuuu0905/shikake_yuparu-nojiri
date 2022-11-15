@@ -81,7 +81,6 @@
                 しています。</p>
             </div>
             <!-- ブログカードリスト -->
-            <!-- <div class="blog__items card-list card-list__pc"> -->
             <div class="blog__items card-list">
               <?php
                 $args = array(
@@ -157,7 +156,6 @@
               <figure class="facility__img4 facility__img--closed">
                 <div class="facility__text">
                   <h3 class="facility__title">宿泊(休業中／再開未定)</h3>
-                  <!-- <div class="facility__link"><a class="facility__btn" href="#">詳しく見る</a></div> -->
                 </div>
               </figure>
             </div>
