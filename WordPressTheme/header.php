@@ -10,7 +10,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- ファビコン -->
-  <!-- <link rel="”icon”" href="./favicon.ico" /> -->
+  <!-- <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/common/favicon.ico" /> -->
   <!-- css -->
   <!-- <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./slick/slick.css">
@@ -61,7 +61,6 @@
     $privacypolicy = esc_url(home_url('/privacypolicy/'));//プライバシーポリシー
     $contact = esc_url(home_url('/contact/'));//お問い合わせ
 ?>
-
 <div class="grid__container">
     <header class="header header__block grid__header">
       <div class="header__inner">
