@@ -23,12 +23,38 @@ Template Name: 下層ページナビゲーション
     </li>
       <?php
       // 今のカテゴリ
-      $curent_category = get_the_category();
-      if($curent_category){
-        $curent_slug = $curent_category[0]->slug;
-      }else{
-        $curent_slug = "";
-      }
+      // if(is_single()){
+      //   $curent_category = get_the_category();
+      //   if($curent_category){
+      //     $curent_slug = $curent_category[0]->slug;
+      //   }else{
+      //     $curent_slug = "";
+      //   }
+      // }else{
+        $curent_category = get_queried_object();
+        // var_dump($curent_category);
+        // var_dump(get_queried_object());
+        if(is_category()){
+          $curent_slug = $curent_category->slug;
+        }elseif(is_single()){
+          $categories = get_the_category();
+          // var_dump($curent_category);
+          if($curent_category){
+            foreach( $categories as $curent_category ) {
+              if(mb_substr($curent_category->slug, 0, 2) == 'y-' && $curent_category->slug !='y-recruit'){
+            // $curent_slug = $curent_category[0]->slug;
+                $curent_slug = $curent_category->slug;
+                break;
+              }
+            }
+
+          }else{
+            $curent_slug = "";
+          }
+        }else{
+          $curent_slug = "";
+        }
+      // }
 
       // 全てのカテゴリ
       $categories = get_categories('hide_empty=0');//空のカテゴリも表示
@@ -43,7 +69,12 @@ Template Name: 下層ページナビゲーション
           }else{
             $current_class = '';
           }
-          echo '<li class="blog-navi__item ' .$current_class .'"><a href="'.get_category_link($category->term_id).'">'.$category->name.'</a></li>';
+          $link = get_category_link($category->term_id);
+          ?>
+          <li class="blog-navi__item <?php echo $current_class; ?>">
+          <a href="<?php echo esc_url($link); ?>"><?php echo $category->name; ?></a>
+        </li>
+      <?php 
         }
       }
       ?>

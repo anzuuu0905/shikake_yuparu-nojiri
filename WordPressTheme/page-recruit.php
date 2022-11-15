@@ -1,4 +1,9 @@
 <?php get_header(); ?>
+
+<?php 
+  global $contact;
+?>
+
 <main class="main grid__content">
       <section class="subpage-head__common">
         <div class="subpage-head__text">
@@ -47,7 +52,7 @@
             </div>
             </div>
             <div class="recruit__contact">
-              <a href="#" class="company__botton">お問い合わせ</a>
+              <a href="<?php echo $contact; ?>" class="company__botton">お問い合わせ</a>
             </div>
           </div>
         </div>

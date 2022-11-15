@@ -4,8 +4,22 @@ Template Name: パンくずリスト
 */
 ?>
 <?php
-  global $home;
-  global $blogs;
+    global $home;
+    global $facility;
+    global $restaurant;
+    global $shop;
+    global $bathhouse;
+    global $access;
+    global $blogs;
+    global $news;
+    global $event;
+    global $media;
+    global $award;
+    global $company;
+    global $recruit;
+    global $sitemap;
+    global $privacypolicy;
+    global $contact;
 ?>
 <div class="breadcrumb__inner inner">
   <ol class="breadcrumb__items">
@@ -28,6 +42,8 @@ Template Name: パンくずリスト
       <li class="breadcrumb__item"><a href="<?php echo $blogs; ?>">スタッフブログ</a></li>
       <li class="breadcrumb__item"><a href="<?php echo $blogs; ?>/<?php echo $cat_slug; ?>"><?php echo $cat_name; ?></a></li>
       <li class="breadcrumb__item breadcrumb__item--current"><?php echo the_title(); ?></li>
+      <?php elseif(is_page()): ?>
+        <li class="breadcrumb__item breadcrumb__item--current"><?php the_title(); ?></li>
     <?php else: ?>
       <li class="breadcrumb__item breadcrumb__item--current">スタッフブログ</li>
     <?php endif; ?>

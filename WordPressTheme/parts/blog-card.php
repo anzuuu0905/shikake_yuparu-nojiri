@@ -15,7 +15,22 @@ Template Name: ブログカード
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/new-icon.png" alt="">
   </div>
   <?php endif;?>
-  <figure class="blog-card__img">
+
+    <?php
+	if ( has_post_thumbnail() ){
+		$image_info = getimagesize(get_the_post_thumbnail_url());
+		$image_width = $image_info[0];
+		$image_height = $image_info[1];
+		if($image_width > $image_height){
+			$class_name ='cover';
+		}else{
+			$class_name ='contain';
+		}
+	}else{
+		$class_name ='cover';
+	}
+?>
+  <figure class="blog-card__img <?php echo $class_name; ?>">
   <img src="
     <?php
     if (has_post_thumbnail()) :
@@ -26,6 +41,7 @@ Template Name: ブログカード
     ?>
     ">
     </figure>
+    
   <div class="blog-card__body">
     <h3 class="blog-card__title"><?php the_title(); ?></h3>
     <div class="blog-card__info">

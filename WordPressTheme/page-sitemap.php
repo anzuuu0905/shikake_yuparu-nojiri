@@ -19,7 +19,7 @@
     global $contact;
   ?>
 
-<main class="main grid__content">
+  <main class="main grid__content">
       <section class="subpage-head__common">
         <div class="subpage-head__text">
           <h1 class="subpage__title">サイトマップ</h1>
