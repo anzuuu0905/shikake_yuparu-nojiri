@@ -75,7 +75,7 @@
     margin-top: rem(50);
 }
 
-.company__btn {
+.company__botton {
     position: relative;
     display: inline-block;
     color: $white;
@@ -86,7 +86,7 @@
     background-color: $orange;
 }
 
-.company__btn::before {
+.company__botton::before {
     /* くの字の表示設定 */
     content: "";
     display: block;
@@ -102,7 +102,7 @@
     transform: rotate(45deg);
 }
 
-.company__btn::after {
+.company__botton::after {
     background: $white;
     position: absolute;
     top: 0;
@@ -117,16 +117,16 @@
     z-index: -1;
 }
 
-.company__btn:hover {
+.company__botton:hover {
     color: $orange;
 }
 
-.company__btn:hover::before {
+.company__botton:hover::before {
     border-top: 1px solid $orange;
     border-right: 1px solid $orange;
 }
 
-.company__btn:hover:after {
+.company__botton:hover:after {
     @include mq("md") {
         transform: scale(1, 1);
     }

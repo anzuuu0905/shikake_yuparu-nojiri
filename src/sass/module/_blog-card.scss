@@ -27,14 +27,18 @@
 
 .blog-card__img {
     position: relative;
-    aspect-ratio: 690/520;
-    object-fit: cover;
+
 }
 
 .blog-card__img img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 690/520;
     object-fit: cover;
+}
+
+.blog-card__img.contain img {
+    object-fit: contain;
 }
 
 .blog-card__body {

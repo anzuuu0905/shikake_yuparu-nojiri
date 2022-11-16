@@ -5,7 +5,7 @@
 
     @include mq("md") {
         display: flex;
-        margin-bottom: rem(90);
+        margin-bottom: rem(64);
     }
 }
 
@@ -116,6 +116,8 @@
     font-weight: $bold;
     line-height: 1;
     padding-left: rem(20);
+    margin-bottom: rem(12);
+
 
     @include mq("md") {
         font-size: rem(25);
@@ -146,9 +148,8 @@
     }
 }
 
-.footer-time__wrap {
-    margin-top: rem(12);
-}
+// .footer-time__wrap {
+// }
 
 .footer-time__table {
     color: $black;
@@ -233,27 +234,26 @@
     font-weight: bold;
     line-height: 1.75;
     background-color: #fffbe5;
-    border: 1px solid #f1a638;
+    border: 1px solid $orange;
     padding: rem(6) rem(10) rem(1);
     margin-top: rem(17);
+    animation: blink_color 2.5s ease infinite alternate;
+
 
     @include mq("md") {
         font-size: rem(17);
         padding: rem(4) rem(10);
         margin-top: rem(18);
     }
-}
 
-.footer-calender__area {
-    background-color: #eee;
-    width: 100%;
-    height: rem(730);
-    margin-top: rem(20);
+    @keyframes blink_color {
+        0% {
+            color: $orange;
+        }
 
-    @include mq("md") {
-        max-width: rem(577);
-        width: 100%;
-        height: rem(230);
+        100% {
+            color: $blue;
+        }
     }
 }
 

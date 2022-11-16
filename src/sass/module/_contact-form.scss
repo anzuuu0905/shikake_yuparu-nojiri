@@ -13,17 +13,17 @@
     font-weight: $normal;
 }
 
-.contact-form__mark{
-    color: #b84274;
+.contact-form__mark {
+    color: #ff7f00;
     font-weight: 400;
 }
 
-.contact-form__block label {
+.contact-form__box dt {
     color: $black;
     font-size: rem(18);
 }
 
-.contact-form__block input {
+.contact-form__box input {
     background-color: #fff;
     border-radius: 3px;
     border: 1px solid #d9d9d9;
@@ -32,7 +32,7 @@
     margin: rem(3) 0;
 }
 
-.contact-form__block textarea {
+.contact-form__box textarea {
     padding: rem(5) rem(15);
     width: 100%;
     height: rem(250);
@@ -51,7 +51,7 @@
 
 
 .contact-form__box {
-    margin-bottom: rem(10);
+    margin-bottom: rem(15);
 }
 
 .contact__example {
@@ -103,11 +103,11 @@
     height: rem(13);
 }
 
-.contact-form__radio {
+.radioBox {
     margin-bottom: rem(3);
 }
 
-input[type="radio"]+label {
+.contact-form__box dd .radioBox .wpcf7-list-item input~span {
     padding: 4px 10px 6px 32px;
     display: inline-block;
     font-size: rem(18);
@@ -120,48 +120,36 @@ input[type="radio"]+label {
     margin: 0 rem(10) rem(10) 0;
 }
 
-input[type="radio"]:checked+label {
-    background-color: #f4e3ea;
-    border-color: #b84274;
+.contact-form__box dd .radioBox .wpcf7-list-item input:checked~span {
+    background-color: #fffbe5;
+    border-color: #f1a638;
     background-image: url(../images/common/contact-radio_checkd.png);
 }
 
-.contact-form__send {
-    text-align: center;
-    margin-bottom: rem(50);
+.contact-form__box .wpcf7-list-item {
+    margin: 0;
 }
 
-.contact-form__btn {
-    position: relative;
-    display: inline-block;
-    color: $white;
+.contact-form__send .wpcf7c-elm-step1 {
+    display: grid;
+    place-items: center;
+    // text-align: center;
+    margin-bottom: rem(20);
+}
+
+.contact-form__btn .wpcf7c-elm-step1 input {
+    color: #fff;
     font-size: rem(16);
-    padding: rem(18) rem(60) rem(18) rem(60);
+    height: rem(60);
+    width: rem(280);
+    // padding: rem(21) rem(78) rem(21) rem(78);
     line-height: 1;
-    background-color: $orange;
+    border-color: $orange;
+    background: url(../images/common/contact-arrow.png) right rem(14) center/rem(9) auto no-repeat $orange;
+    cursor: pointer;
+    border-radius: 0;
 
     @include mq("md") {
         font-size: rem(18);
-        padding: rem(21) rem(78) rem(21) rem(78);
     }
-}
-
-.contact-form__btn::before {
-    /* くの字の表示設定 */
-    content: "";
-    display: block;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: rem(10);
-    width: 10px;
-    height: 10px;
-    border-top: 1px solid $white;
-    border-right: 1px solid $white;
-    transform: rotate(45deg);
-}
-
-.contact-form__btn:hover {
-    cursor: pointer;
 }

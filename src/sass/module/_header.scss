@@ -5,12 +5,12 @@
     height: rem(45);
 
     @include mq("md") {
-        background-color: transparent;
-        height: rem(1000);
+        background-color: #fff;
+        height: 1000px;
         width: rem(230);
         overflow-y: scroll;
         -ms-overflow-style: none;
-        padding-bottom: rem(500);
+        padding-bottom: rem(200);
     }
 }
 

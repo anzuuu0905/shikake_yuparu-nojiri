@@ -50,6 +50,7 @@
     @include mq("md") {
         display: inline;
         font-size: rem(17);
+        line-height: 2;
     }
 }
 
@@ -59,7 +60,7 @@
     @include mq("md") {
         display: flex;
         align-items: center;
-        margin-top: rem(40);
+        margin-top: rem(45);
     }
 }
 

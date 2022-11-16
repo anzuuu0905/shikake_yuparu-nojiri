@@ -8,7 +8,7 @@
     padding: rem(25) 0;
 
     @include mq("md") {
-        padding: rem(20) 0 rem(25);
+        padding: rem(20) 0 rem(50);
     }
 }
 
@@ -56,4 +56,17 @@
         font-size: rem(18);
         margin-top: rem(17);
     }
+}
+
+.blogpage__seach {
+    color: $black;
+    font-size: rem(30);
+    text-align: center;
+    margin-bottom: rem(20);
+}
+
+.blogpage__notfound{
+    color: $black;
+    font-size: rem(18);
+    font-weight: $normal;
 }

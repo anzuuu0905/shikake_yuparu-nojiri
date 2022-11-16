@@ -1,17 +1,9 @@
 @use "global"as *;
 
 .header__block {
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 9999;
+    background-color: #fff;
 
-    @include mq("md") {
-        position: sticky;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 9999;
-    }
 }

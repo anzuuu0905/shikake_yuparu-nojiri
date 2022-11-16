@@ -5,11 +5,10 @@
     max-width: rem(2000);
     width: 100%;
     height: rem(375);
-    margin: rem(45) auto 0;
+    margin: 0 auto;
 
     @include mq("md") {
         height: rem(450);
-        margin-top: 0;
         margin-bottom: rem(43);
     }
 }

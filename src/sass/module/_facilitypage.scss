@@ -112,10 +112,10 @@
     border: 1px solid $orange;
     padding: rem(6) rem(10);
     margin: 0 auto;
-    max-width: rem(337);
+    max-width: rem(400);
     width: 100%;
 
-    @include mq("md") {
+    @include mq("lg") {
         display: none;
     }
 }
@@ -123,14 +123,15 @@
 .facilitypage-info__pc {
     display: none;
 
-    @include mq("md") {
+    @include mq("lg") {
         display: block;
         background-color: #fffbe5;
         border: 1px solid $orange;
         padding: rem(6) rem(10);
-        max-width: rem(337);
+        max-width: rem(310);
         width: 100%;
-        margin-left: rem(20);
+        // margin-left: rem(20);
+        margin: rem(50) 0 rem(50) rem(20);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -138,13 +139,11 @@
 }
 
 .facilitypage-info__text {
-    color: $black;
-    font-size: rem(13);
-    line-height: 1.61538462;
-    animation: blink_color 2.5s ease infinite alternate;
-
     @include mq("md") {
-        font-size: rem(17);
+        color: $black;
+        font-size: rem(16);
+        line-height: 1.61538462;
+        animation: blink_color 2.5s ease infinite alternate;
     }
 
     @keyframes blink_color {
@@ -158,18 +157,33 @@
     }
 }
 
+.facilitypage-info__sp p {
+    color: $black;
+    font-size: rem(14);
+    line-height: 1.61538462;
+    animation: blink_color 2.5s ease infinite alternate;
+
+    @keyframes blink_color {
+        0% {
+            color: $orange;
+        }
+
+        100% {
+            color: $blue;
+        }
+    }
+}
 
 .facilitypage-calender__block {
     max-width: rem(600);
     width: 100%;
-    height: rem(750);
+    // height: rem(750);
     margin: rem(20) auto 0;
-    background-color: #eee;
 
     @include mq("md") {
         max-width: rem(540);
         width: 100%;
-        height: rem(230);
+        // height: rem(230);
         margin-top: 0;
     }
 }
@@ -178,6 +192,7 @@
 
     @include mq("md") {
         display: flex;
+        margin-top: rem(15);
     }
 }
 
