@@ -5,7 +5,7 @@
   global $bathhouse;
 ?>
 
-<main class="main grid__content">
+  <main class="main grid__content">
       <section class="facilitypage-head__wrap">
         <div class="facilitypage-head__text">
           <h1 class="facilitypage__title">施設のご案内</h1>
@@ -32,28 +32,28 @@
           <div class="facilitypage-calender__wrap">
             <h2 class="facilitypage-body__title">営業日カレンダー</h2>
             <div class="facilitypage-info__sp">
-              <p class="facilitypage-info__text">
+              <div class="facilitypage-info__text">
               <?php
               $page_obj = get_page_by_path( 'index' );
               $page_id = $page_obj->ID;
               the_field('eigyo', $page_id);
             ?>
-              </p>
+              </div>
             </div>
             <div class="facilitypage-info__wrap">
               <div class="facilitypage-calender__block">
 
           <!-- XO Event Calendar プラグイン -->
             <?php echo do_shortcode( '[xo_event_calendar holidays="regular-holiday" navigation="false" months="2"]' ); ?>
-
-
-
               </div>
               <div class="facilitypage-info__pc">
-                <p class="facilitypage-info__text">
-                  2022年00月00日 (水)が定休日です。<br>
-                  ※なお、1日 (第1水曜日)は通常通り営業いたします。
-                </p>
+                <div class="facilitypage-info__text">
+                  <?php
+                    $page_obj = get_page_by_path( 'index' );
+                    $page_id = $page_obj->ID;
+                    the_field('eigyo', $page_id);
+                  ?>
+                </div>
               </div>
             </div>
 

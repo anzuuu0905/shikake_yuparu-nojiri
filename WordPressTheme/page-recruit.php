@@ -21,36 +21,35 @@
             <div class="recruit__content">
               <p class="recruit__description">現在、以下の職種で求人を行っています。</p>
               <div class="blog__items card-list">
-            <!-- ブログカードリスト -->
-            <?php
-                $args = array(
-                  'post_type' => array('post'),
-                  'post_status' => array('publish'),//公開状態
-                  'category_name' => 'y-recruit',// 表示したいカテゴリーのスラッグを指定
-                  'posts_per_page' => -1,
-                  'order' => 'DESC',//降順
-                  'orderby' => 'date',//日付で並び替える
-                );
-                $the_query = new WP_Query( $args );
+                <!-- ブログカードリスト -->
+                <?php
+                  $args = array(
+                    'post_type' => array('post'),
+                    'post_status' => array('publish'),//公開状態
+                    'category_name' => 'y-recruit',// 表示したいカテゴリーのスラッグを指定
+                    'posts_per_page' => -1,
+                    'order' => 'DESC',//降順
+                    'orderby' => 'date',//日付で並び替える
+                  );
+                  $the_query = new WP_Query( $args );
 
-              ?>
-              <!-- ループ -->
-              <?php if ( $the_query->have_posts() ) : ?>
-                <?php while ( $the_query->have_posts() ) : ?>
-                  <?php 
-                    $the_query->the_post();
-                    $post_id = get_the_ID();
-                  ?>
-                  <?php get_template_part('parts/blog-card'); ?>
-                <?php 
-                  endwhile;
-                  wp_reset_postdata();
                 ?>
-              <?php endif; ?>
+                <!-- ループ -->
+                <?php if ( $the_query->have_posts() ) : ?>
+                  <?php while ( $the_query->have_posts() ) : ?>
+                    <?php 
+                      $the_query->the_post();
+                      $post_id = get_the_ID();
+                    ?>
+                    <?php get_template_part('parts/blog-card'); ?>
+                  <?php 
+                    endwhile;
+                    wp_reset_postdata();
+                  ?>
+                <?php endif; ?>
+              </div>
             </div>
-
-            </div>
-            </div>
+            <!-- </div> -->
             <div class="recruit__contact">
               <a href="<?php echo $contact; ?>" class="company__botton">お問い合わせ</a>
             </div>

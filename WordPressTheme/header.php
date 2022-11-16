@@ -56,10 +56,11 @@
       <div class="header__inner">
         <h1 class="logo">
           <a href="<?php echo $home; ?>" class="logo__link">
-            <picture>
-              <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/common/header-logo_pc.svg" media="(min-width: 768px)" > <!-- タブレット画像 -->
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/header-logo_sp.svg" alt="ゆ〜ぱるのじり" />
-            </picture>
+          <picture>
+            <source srcset="<?php echo get_template_directory_uri() ?>/assets/images/common/header-logo_pc.svg"
+                    media="(min-width: 768px)">
+            <img src="<?php echo get_template_directory_uri() ?>/assets/images/common/header-logo_sp.svg" alt="ゆ〜ぱるのじり" />
+          </picture>
           </a>
         </h1>
         <button class="header__drawer hamburger js-hamburger">

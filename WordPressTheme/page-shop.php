@@ -34,24 +34,36 @@
             <h2 class="shop-body__title">オススメ商品のご案内</h2>
             <!-- ブログカードリスト -->
             <div class="blog__items card-list">
-              <a href="#" class="blog-card card-list__item">
-                <figure class="blog-card__img">
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/subpage/shopinfo-img1.jpg" alt="ブログカード1">
-                </figure>
-                <div class="blog-card__body">
-                  <h3 class="blog-card__title">宮崎県の「道の駅限定」商品</h3>
-                  <div class="blog-card__info">
-                    <time class="blog-card__data" datetime="2022-08-10">2022.08.10</time>
-                  </div>
-                </div>
-                <div class="blog-card__foot">
-                  <span class="blog-card__author">ハル（売店）</span>
-                </div>
-              </a>
-            </div>
+              <?php
+                $cat_id = array();
+                $cat = get_category_by_slug('ys_menu');
+                $cat_id[0] = $cat->cat_ID;
+                $args = array(
+                  'post_type' => array('post'),
+                  'post_status' => array('publish'),//公開状態
+                  'posts_per_page' => 4,//4件取得
+                  'post__not_in' =>array( $post->ID ), //現在の記事は含めない
+                  'category__in' => $cat_id,
+                  'order' => 'DESC',//降順
+                  'orderby' => 'date',//日付で並び替える
+                );
+                $the_query = new WP_Query( $args );
+              ?>
+              <!-- ループ -->
+              <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : ?>
+                  <?php 
+                    $the_query->the_post();
+                    $post_id = get_the_ID();
+                  ?>
+              <?php get_template_part('parts/blog-card'); ?>
+
+              <?php endwhile; ?>
+            <?php endif; ?>
           </div>
         </div>
       </div>
+    </div>
 
       <!-- 関連スタッフブログ -->
       <?php get_template_part('parts/blog-connect'); ?>

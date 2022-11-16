@@ -111,7 +111,7 @@
             </div>
           <div class="footer-calender__area">
           <!-- XO Event Calendar プラグイン -->
-          <?php echo do_shortcode( '[xo_event_calendar holidays="regular-holiday" navigation="false" months="2"]' ); ?>
+          <?php echo do_shortcode( '[xo_event_calendar holidays="regular-holiday" navigation="false" months="2" id="fotter_calender"]' ); ?>
           </div>
 
           <div class="footer-link__wrapper footer__links">
@@ -162,7 +162,7 @@
       <div class="footer-overview__wrapper">
         <ul class="footer-overview__links">
           <li><a href="<?php echo $home ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-yupalnojiri.png" alt="ゆ～ぱるのじり"></a></li>
-          <li><a href="https://nojiri-kopia.com/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-nojirikopia.png" alt="のじりこぴあ" target="_blank" rel="noreferrer noopener"></a></li>
+          <li><a href="https://nojiri-kopia.com/"  target="_blank" rel="noreferrer noopener"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/logo-nojirikopia.png" alt="のじりこぴあ"></a></li>
         </ul>
         <div class="footer-overview__wrap">
           <div class="footer-overview__logo">

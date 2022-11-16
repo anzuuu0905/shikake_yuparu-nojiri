@@ -22,6 +22,8 @@ Template Name: ブログカード
                   $cat = get_category_by_slug("y-restaurant");
                 elseif(is_page('bathhouse')):
                   $cat = get_category_by_slug("y-bath");
+                elseif(is_page('shop')):
+                  $cat = get_category_by_slug("y-shop");
                 else:
                   $cat = '';
                 endif;
@@ -35,14 +37,13 @@ Template Name: ブログカード
               $args = array(
                 'post_type' => array('post'),
                 'post_status' => array('publish'),//公開状態
-                'posts_per_page' => 4,//8件取得
+                'posts_per_page' => 4,//r件取得
                 'post__not_in' =>array( $post->ID ), //現在の記事は含めない
                 'category__in' => $cat_id,
                 'order' => 'DESC',//降順
                 'orderby' => 'date',//日付で並び替える
               );
               $the_query = new WP_Query( $args );
-              // var_dump($the_query);
             ?>
               <!-- ループ -->
               <?php if ( $the_query->have_posts() ) : ?>

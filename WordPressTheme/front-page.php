@@ -169,44 +169,46 @@
             <span class="section__subtitle">Information</span>
           </div>
           <div class="news__wrapper">
-            <ul class="news__lists">
-            <?php
-              $args = array(
-                'post_type' => array('post'),
-                'post_status' => array('publish'),//公開状態
-                // 'cat' => '1', 
-                'category_name' => 'y-news',// 表示したいカテゴリーのスラッグを指定
-                'posts_per_page' => 4,//4件取得
-                'order' => 'DESC',//降順
-                'orderby' => 'date',//日付で並び替える
-              );
-              $the_query = new WP_Query( $args );
-            ?>
-            <!-- ループ -->
-            <?php if ( $the_query->have_posts() ) : ?>
-              <?php while ( $the_query->have_posts() ) : ?>
-                <?php 
-                  $the_query->the_post();
-                ?>
-                  <li class="news__list">
-                    <a href="<?php the_permalink(); ?>">
-                      <?php the_title(); ?>
-                    </a>
-                  </li>
-
-                <?php 
-                endwhile;
-                wp_reset_postdata();
+            <div class="news__lists">
+              <ul>
+              <?php
+                $args = array(
+                  'post_type' => array('post'),
+                  'post_status' => array('publish'),//公開状態
+                  // 'cat' => '1', 
+                  'category_name' => 'y-news',// 表示したいカテゴリーのスラッグを指定
+                  'posts_per_page' => 4,//4件取得
+                  'order' => 'DESC',//降順
+                  'orderby' => 'date',//日付で並び替える
+                );
+                $the_query = new WP_Query( $args );
               ?>
-            <?php endif; ?>
+              <!-- ループ -->
+              <?php if ( $the_query->have_posts() ) : ?>
+                <?php while ( $the_query->have_posts() ) : ?>
+                  <?php 
+                    $the_query->the_post();
+                  ?>
+                    <li class="news__list">
+                      <a href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                      </a>
+                    </li>
+
+                  <?php 
+                  endwhile;
+                  wp_reset_postdata();
+                ?>
+              <?php endif; ?>
+            </ul>
               <!-- ブログリンクボタン -->
               <div class="news__btn">
                 <a class="btn-link" href="<?php echo $news; ?>">もっと見る</a>
               </div>
-            </ul>
+            </div>
             <div class="news-sns__area">
-              <iframe class="news-sns__img u-desktop" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fyuparunojiri%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=445718773341488" width="340" height="369" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-              <iframe class="news-sns__img u-mobile" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fyuparunojiri%2F&tabs=timeline&width=290&height=426&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=445718773341488" width="290" height="426" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+              <iframe class="news-sns__img u-desktop" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fyuparunojiri%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=445718773341488" width="340" height="369" style="border:none;overflow:hidden" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+              <iframe class="news-sns__img u-mobile" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fyuparunojiri%2F&tabs=timeline&width=290&height=426&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=445718773341488" width="290" height="426" style="border:none;overflow:hidden" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             </div>
           </div>
         </div>
