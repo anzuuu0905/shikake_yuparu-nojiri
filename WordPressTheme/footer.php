@@ -132,7 +132,7 @@
                     $fb_wp_rec = get_post( $fb_wp_id);
                     $fb_wp_discts = $fb_wp_rec->post_content;
                 ?>
-                <a href="<?php echo $fb_link; ?>" class="footer-link__item1">
+                <a href="<?php echo $fb_link; ?>" class="footer-link__item1" target="_blank" rel="noreferrer noopener">
                     <img src="<?php echo $fb_img; ?>" alt="<?php echo $fb_wp_discts; ?>">
                   </a>
                 <?php endif; ?>

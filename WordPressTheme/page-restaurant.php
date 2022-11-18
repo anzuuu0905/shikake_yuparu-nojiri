@@ -213,7 +213,7 @@
                   問合せフォームまたはお電話にておたずねください。</p>
               </div>
               <div class="restaurant-enkai__link">
-                <a href="<?php //echo $contact; ?>" class="restaurant-enkai__btn">お申し込み・お問い合わせ</a>
+                <a href="<?php echo $contact; ?>" class="restaurant-enkai__btn">お申し込み・お問い合わせ</a>
               </div>
               <div class="restaurant-enkai__contact">
                 <a href="tel:0984-44-2210" class="restaurant-enkai__tel">0984-44-2210</a>

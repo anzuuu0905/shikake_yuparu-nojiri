@@ -13,7 +13,7 @@
       <!-- ブログナビメニュー -->
       <?php get_template_part('parts/category-nav'); ?>
 
-			<div>「<?php the_search_query(); ?>」の検索結果</div>
+			<div class="blogpage__seach">「<?php the_search_query(); ?>」の検索結果</div>
 
       <!-- ブログ一覧 -->
       <?php get_template_part('parts/blog-list'); ?>

@@ -22,27 +22,14 @@ Template Name: 下層ページナビゲーション
     <a href="<?php echo $blogs; ?>">全て</a>
     </li>
       <?php
-      // 今のカテゴリ
-      // if(is_single()){
-      //   $curent_category = get_the_category();
-      //   if($curent_category){
-      //     $curent_slug = $curent_category[0]->slug;
-      //   }else{
-      //     $curent_slug = "";
-      //   }
-      // }else{
         $curent_category = get_queried_object();
-        // var_dump($curent_category);
-        // var_dump(get_queried_object());
         if(is_category()){
           $curent_slug = $curent_category->slug;
         }elseif(is_single()){
           $categories = get_the_category();
-          // var_dump($curent_category);
           if($curent_category){
             foreach( $categories as $curent_category ) {
               if(mb_substr($curent_category->slug, 0, 2) == 'y-' && $curent_category->slug !='y-recruit'){
-            // $curent_slug = $curent_category[0]->slug;
                 $curent_slug = $curent_category->slug;
                 break;
               }

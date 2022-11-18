@@ -16,33 +16,7 @@ Template Name: ブログカード
   </div>
   <?php endif;?>
 
-    <?php
-    var_dump(getimagesize(get_the_post_thumbnail_url()));
-	// if ( has_post_thumbnail() ){
-	// 	$image_info = getimagesize(get_the_post_thumbnail_url());
-	// 	$image_width = $image_info[0];
-	// 	$image_height = $image_info[1];
-  //   var_dump($image_width);
-  //   var_dump('----------');
-  //   var_dump($image_height);
-  //   var_dump('==========');
-	// 	if($image_width > $image_height){
-	// 		$class_name ='cover';
-	// 	}else{
-	// 		$class_name ='contain';
-	// 	}
-	// }else{
-	// 	$class_name ='cover';
-	// }
-?>
-<?php 
-// var_dump(get_the_post_thumbnail_url());
-  // $size = get_image_width_and_height(get_the_post_thumbnail_url());
-  // var_dump($size);
-?>
-
-
-  <figure class="blog-card__img <?php //echo $class_name; ?>">
+  <figure class="blog-card__img">
   <img src="<?php
     if (has_post_thumbnail()):
       $thumbID = get_post_thumbnail_id( $post->ID );
@@ -56,7 +30,7 @@ Template Name: ブログカード
     </figure>
     
   <div class="blog-card__body">
-    <h3 class="blog-card__title"><?php the_title(); ?></h3>
+    <h3 class="blog-card__title"><?php my_trim(get_the_title(), 22); ?></h3>
     <div class="blog-card__info">
       <time class="blog-card__data" datetime="<?php the_time('Y-m-d'); ?>"><?php the_date(); ?></time>
       <span class="blog-card__author"><?php the_author_meta('nickname'); ?></span>

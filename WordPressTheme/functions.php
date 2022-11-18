@@ -167,7 +167,7 @@ add_filter( 'excerpt_more', 'my_excerpt_more' );
 // get site url
 wpcf7_add_form_tag('cf7_url', 'cf7_custom_url', true);
 function cf7_custom_url(){
-     return get_bloginfo('url');
+	return get_bloginfo('url');
 }
 
 
@@ -182,29 +182,19 @@ function post_has_archive( $args, $post_type ) {
 }
 add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
 
-//画像URLから幅と高さを取得する（同サーバー内ファイルURLのみ）
-function get_image_width_and_height($image_url){
-  $res = null;
-  //wp-contentディレクトリのパス：/var/www/html/example/wp-content
-  $wp_content_dir = WP_CONTENT_DIR;
-  //wp-contentディレクトリのURL：http://www.example.com/wp-content
-  $wp_content_url = content_url();
-  //URLをローカルパスに置換
-  $image_file = str_replace($wp_content_url, $wp_content_dir, $image_url);
-  //画像サイズを取得
-
-	var_dump($wp_content_dir);
-	var_dump('-------------');
-	var_dump($wp_content_url);
-	var_dump('==============');
-	var_dump(  $image_file);
-	var_dump('**************');
-  $imagesize = getimagesize($image_file);
-
-  // if ($imagesize) {
-  //   $res = array();
-  //   $res['width'] = $imagesize[0];
-  //   $res['height'] = $imagesize[1];
-  //   return $res;
-  // }
+function my_trim($str, $num, $display = true)
+{
+  if (empty($str) || empty($num)) {
+    return;
+  } else {
+    $content      = '';
+    $remove_array = array("\r\n", "\r", "\n", ' ', '　');
+    $content      = wp_trim_words(strip_shortcodes($str), $num, '...');
+    $content      = str_replace($remove_array, '', $content);
+    if ($display == false) {
+      return $content;
+    } else {
+      echo $content;
+    }
+  }
 }

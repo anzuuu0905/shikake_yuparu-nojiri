@@ -47,7 +47,7 @@
                 <?php echo do_shortcode('[addtoany]'); ?>
               </div>
             </div>
-            <div class="blog-article__author blog-author__block">
+            <div class="blog-author__block">
               <div class="blog-author__wrap">
                 <div class="blog-author__namebox">
                   <div class="blog-author__img">

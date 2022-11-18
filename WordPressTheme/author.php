@@ -13,7 +13,7 @@
       <!-- ブログナビメニュー -->
       <?php get_template_part('parts/category-nav'); ?>
 
-      <div>「<?php echo get_the_author(); ?>」の記事一覧</div>
+      <div class="blogpage__seach">「<?php echo get_the_author(); ?>」の記事一覧</div>
 
       <!-- ブログ一覧 -->
       <?php get_template_part('parts/blog-list'); ?>

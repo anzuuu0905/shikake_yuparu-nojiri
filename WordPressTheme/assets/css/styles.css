@@ -361,7 +361,6 @@ select::-ms-expand {
 
 .slick-list.dragging {
 	cursor: pointer;
-	cursor: hand;
 }
 
 .slick-slider .slick-track,
@@ -1252,6 +1251,7 @@ select::-ms-expand {
 	border: 1px solid #0082c4;
 	border-radius: 3.125rem;
 	color: #0082c4;
+	display: inline-block;
 	font-size: 14px;
 	font-size: 0.875rem;
 	line-height: 1;
@@ -1488,6 +1488,16 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 }
 
 .blog-card__body {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
 	padding: 10px 16px 7px 16px;
 	padding: 0.625rem 1rem 0.4375rem 1rem;
 }
@@ -1496,16 +1506,28 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 	color: #4d4d4d;
 	font-size: 16px;
 	font-size: 1rem;
+	height: 42px;
+	height: 2.625rem;
 	letter-spacing: -0.05em;
 	line-height: 1.3125;
 }
 
 .blog-card__info {
 	color: #666666;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 }
 
 .blog-card__data {
 	display: inline-block;
+	-webkit-box-flex: 1;
+	-ms-flex-positive: 1;
+	flex-grow: 1;
 	font-size: 14px;
 	font-size: 0.875rem;
 	line-height: 1.21428571;
@@ -1541,7 +1563,13 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 }
 
 .blog-card__foot {
-	margin-top: auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 	padding: 0 16px 16px;
 	padding: 0 1rem 1rem;
 }
@@ -5552,6 +5580,14 @@ button {
 	background: url(../images/common/page-arrow2.png) center center/11px auto no-repeat;
 }
 
+.wp-pagenavi .pages {
+	display: none;
+}
+
+.wp-pagenavi .last {
+	display: none;
+}
+
 .accesspage_block {
 	margin-bottom: 100px;
 	margin-bottom: 6.25rem;
@@ -6586,7 +6622,7 @@ a:hover {
 }
 
 .footer__link1 {
-	display: gird;
+	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	margin-top: 3rem;
 }

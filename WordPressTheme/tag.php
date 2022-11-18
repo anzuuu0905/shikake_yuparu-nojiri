@@ -13,7 +13,7 @@
       <!-- ブログナビメニュー -->
       <?php get_template_part('parts/category-nav'); ?>
       
-      <div>「<?php single_tag_title(); ?>」の記事一覧</div>
+      <div class="blogpage__seach">「<?php single_tag_title(); ?>」の記事一覧</div>
 
       <!-- ブログ一覧 -->
       <?php get_template_part('parts/blog-list'); ?>
