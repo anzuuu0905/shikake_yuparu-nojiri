@@ -907,8 +907,6 @@ select::-ms-expand {
 	justify-content: center;
 	margin-bottom: 10px;
 	margin-bottom: 0.625rem;
-	margin-top: 45px;
-	margin-top: 2.8125rem;
 	width: 100%;
 }
 
@@ -1725,8 +1723,6 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 	justify-content: center;
 	margin-bottom: 10px;
 	margin-bottom: 0.625rem;
-	margin-top: 45px;
-	margin-top: 2.8125rem;
 	width: 100%;
 }
 
@@ -2436,6 +2432,14 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 .company__botton:hover::before {
 	border-right: 1px solid #f1a638;
 	border-top: 1px solid #f1a638;
+}
+
+.company-table__body a {
+	text-decoration: underline;
+}
+
+.company-table__body a:hover {
+	color: #f1a638;
 }
 
 .contact-form__inner {
@@ -3389,6 +3393,8 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 	font-size: 0.875rem;
 	font-weight: 700;
 	line-height: 1;
+	padding: 4px 0;
+	padding: 0.25rem 0;
 }
 
 .footer__right {
@@ -4163,6 +4169,15 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 	border-top: 1px solid #f1a638;
 }
 
+.pagetop {
+	bottom: 0;
+	position: fixed;
+	right: 0;
+	width: 50px;
+	width: 3.125rem;
+	z-index: 99;
+}
+
 .privacy__content {
 	margin-bottom: 50px;
 	margin-bottom: 3.125rem;
@@ -4548,8 +4563,6 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 	justify-content: center;
 	margin-bottom: 10px;
 	margin-bottom: 0.625rem;
-	margin-top: 45px;
-	margin-top: 2.8125rem;
 	width: 100%;
 }
 
@@ -4621,8 +4634,8 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 	display: inline-block;
 	font-size: 13px;
 	font-size: 0.8125rem;
-	margin: 0 12px;
-	margin: 0 0.75rem;
+	margin: 0 8px;
+	margin: 0 0.5rem;
 	text-decoration: underline;
 }
 
@@ -4901,8 +4914,8 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 }
 
 .restaurant-menu__item {
-	margin: 0 10px;
-	margin: 0 0.625rem;
+	padding: 0 10px;
+	padding: 0 0.625rem;
 }
 
 .restaurant-menu__item img {
@@ -5009,8 +5022,6 @@ a.a2a_button_twitter_tweet.addtoany_special_service {
 	justify-content: center;
 	margin-bottom: 10px;
 	margin-bottom: 0.625rem;
-	margin-top: 45px;
-	margin-top: 2.8125rem;
 	width: 100%;
 }
 
@@ -5416,8 +5427,6 @@ button {
 	justify-content: center;
 	margin-bottom: 10px;
 	margin-bottom: 0.625rem;
-	margin-top: 45px;
-	margin-top: 2.8125rem;
 	width: 100%;
 }
 
@@ -5736,7 +5745,7 @@ button {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	margin: 0 -2.5rem 0 -2.5rem;
-	width: calc(100% + 5rem);
+	width: calc(100% + 4rem);
 }
 
 .restaurant-time__text {
@@ -6643,6 +6652,7 @@ a:hover {
 
 .footer-time__close {
 	font-size: 1.25rem;
+	padding: 0.875rem 0;
 }
 
 .footer__right {
@@ -6779,7 +6789,7 @@ a:hover {
 	opacity: 1;
 }
 
-.pc-nav__item.pc-nav__item--current {
+.pc-nav__item.pc-nav__item--orange {
 	color: #f1a638;
 }
 
@@ -6787,7 +6797,7 @@ a:hover {
 	color: #f1a638;
 }
 
-.pc-nav__item--small.pc-nav__item--current {
+.pc-nav__item--small.pc-nav__item--orange {
 	color: #f1a638;
 }
 
@@ -7200,6 +7210,7 @@ a:hover {
 
 .restaurant__link a {
 	font-size: 1.125rem;
+	margin: 0 0.75rem;
 }
 
 .restaurant__link::before {
@@ -7283,7 +7294,7 @@ a:hover {
 }
 
 .restaurant-menu__item {
-	margin: 0;
+	padding: 0;
 }
 
 .restaurant-menu__item img {
@@ -7398,6 +7409,10 @@ a:hover {
 .next-arrow {
 	height: 2.8125rem;
 	width: 2.8125rem;
+}
+
+.subpage-head__common {
+	margin-top: 2.8125rem;
 }
 
 .subpage__title {

@@ -39,7 +39,10 @@
               </tr>
               <tr class="company-table__item">
                 <th class="company-table__head">事業内容</th>
-                <td class="company-table__body">ダミーです、小売業、飲食業、娯楽業、他</td>
+                <td class="company-table__body">
+              <a rel="noreferrer noopener" href="https://yuparu-nojiri.com/">道の駅ゆ～ぱるのじり</a>、
+              <a rel="noreferrer noopener" href="https://nojiri-kopia.com/" target="_blank">のじりこぴあ</a>の運営
+            </td>
               </tr>
             </table>
             <div class="company__contact">

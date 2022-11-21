@@ -48,6 +48,7 @@
       </main>
     </div>
     <footer class="footer footer__block grid__footer">
+    <div class="pagetop"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/page_top.png" alt="page top"></div>
       <nav class="footer__nav navi">
         <ul class="navi-large__items">
           <li class="navi-large__item"><a href="<?php echo $facility; ?>">施設のご案内</a></li>

@@ -238,7 +238,7 @@
     }
 }
 
-.pc-nav__item.pc-nav__item--current {
+.pc-nav__item.pc-nav__item--orange {
     @include mq("md") {
         color: $orange;
     }
@@ -250,7 +250,7 @@
     }
 }
 
-.pc-nav__item--small.pc-nav__item--current {
+.pc-nav__item--small.pc-nav__item--orange {
     @include mq("md") {
         color: $orange;
     }
