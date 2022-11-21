@@ -47,7 +47,7 @@
                   <td class="accesspage-table__body"><a href="https://www.navitime.co.jp/bustransit/search?orvStationName=%E5%AE%AE%E5%B4%8E%E9%A7%85&amp;orvStationCode=00080560&amp;dnvStationName=%E3%82%86%E3%83%BC%E3%81%B1%E3%82%8B%E3%81%AE%E3%81%98%E3%82%8A%E5%89%8D#search-area" target="_blank" rel="noopener noreferrer">出発・到着時刻、<br class="u-mobile">運賃</a></td>
                 </tr>
                 <tr class="accesspage-table__item">
-                  <th class="accesspage-table__head">JR小林駅から<span>駅前バス乗り場</span></th>
+                  <th class="accesspage-table__head">JR小林駅から<span>北側出口、2番乗り場</span></th>
                   <td class="accesspage-table__body"><a href="https://www.navitime.co.jp/bustransit/search?orvStationName=%E5%B0%8F%E6%9E%97%E9%A7%85%28%E5%AE%AE%E5%B4%8E%E7%9C%8C%29&amp;orvStationCode=00384902&amp;dnvStationName=%E3%82%86%E3%83%BC%E3%81%B1%E3%82%8B%E3%81%AE%E3%81%98%E3%82%8A%E5%89%8D#search-area" target="_blank" rel="noopener noreferrer">出発・到着時刻、<br class="u-mobile">運賃</a></td>
                 </tr>
                 <tr class="accesspage-table__item">

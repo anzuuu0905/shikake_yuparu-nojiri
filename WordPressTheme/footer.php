@@ -7,6 +7,8 @@
           global $access;
           global $blogs;
           global $news;
+          global $media;
+          global $award;
           global $event;
           global $company;
           global $recruit;
@@ -14,7 +16,7 @@
           global $privacypolicy;
           global $contact;
         ?>
-        <?php if(!is_page('access')): ?>
+        <?php if(!is_page('access') && !is_page('privacypolicy')): ?>
         <section class="access access__block">
           <div class="access__inner inner">
             <div class="access__head">
@@ -59,6 +61,8 @@
         <ul class="navi-small__items">
           <li class="navi-small__item"><a href="<?php echo $news; ?>">お知らせ</a></li>
           <li class="navi-small__item"><a href="<?php echo $event; ?>">イベント情報</a></li>
+          <li class="navi-small__item"><a href="<?php echo $media; ?>">メディア掲載</a></li>
+          <li class="navi-small__item"><a href="<?php echo $award; ?>">受賞実績</a></li>
           <li class="navi-small__item"><a href="<?php echo $company; ?>">運営会社</a></li>
           <li class="navi-small__item"><a href="<?php echo $recruit; ?>">採用情報</a></li>
           <li class="navi-small__item"><a href="<?php echo $privacypolicy; ?>">プライバシーポリシー</a></li>
@@ -118,6 +122,7 @@
             <div class="footer__link1">
               <?php
                 $page_obj = get_page_by_path( 'index' );
+                // var_dump($page_obj);
                 $page_id = $page_obj->ID;
                 $cnt = 1;
                 ?>

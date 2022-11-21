@@ -1,16 +1,16 @@
 @use "global"as *;
 
 .search__wrap {
-    margin-top: rem(-14);
+    margin-top: rem(16);
 
-    @include mq("md") {
-        margin-top: rem(14);
+//     @include mq("md") {
+//         margin-top: rem(14);
 
-    }
+//     }
 
-    @include mq("lg") {
-        margin-top: rem(-24);
-    }
+//     @include mq("lg") {
+//         margin-top: rem(-24);
+//     }
 }
 
 .search_container {
@@ -32,10 +32,14 @@
 }
 
 .search_container input[type="text"] {
-    font-size: rem(14);
+    font-size: rem(13);
     font-weight: $normal;
     border: none;
     height: inherit;
+    width: calc(100% - rem(30));
+    @include mq("md"){
+        font-size: rem(18);
+    }
 }
 
 .search_container input[type="text"]:focus {
@@ -45,14 +49,19 @@
 .search_container input[type="submit"] {
     cursor: pointer;
     font-family: FontAwesome;
-    font-size: rem(14);
+    font-size: rem(16);
     border: none;
     background: none;
     color: $black;
     position: absolute;
-    width: rem(25);
+    width: rem(30);
     height: inherit;
     right: rem(3);
     top: rem(-1);
     outline: none;
+    @include mq("md"){
+        font-size: rem(18);
+        right: rem(10);
+    }
+
 }

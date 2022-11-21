@@ -20,6 +20,9 @@
     transition: 0.2s ease-in-out;
     text-align: center;
     text-decoration: none;
+    @include mq("md"){
+        padding: rem(8) rem(13);
+    }
 }
 
 .wp-pagenavi a:hover {
@@ -50,6 +53,7 @@
 
 .wp-pagenavi .previouspostslink {
     background: url(../images/common/page-arrow1.png) center center/11px auto no-repeat;
+    padding: rem(8);
 }
 
 .wp-pagenavi .nextpostslink {
@@ -99,8 +103,12 @@
 
 .wp-pagenavi .pages{
     display: none;
-  }
-  
-  .wp-pagenavi .last{
+}
+
+.wp-pagenavi .last{
     display: none;
-  }
+}
+
+.wp-pagenavi .first{
+    display: none;
+}

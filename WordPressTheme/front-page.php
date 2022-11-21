@@ -26,7 +26,7 @@
           <?php endif; ?>
           </ul>
         </div>
-        <div class="dots-5"></div>
+        <div class="dots-top"></div>
         <div class="mainview__text">
           <h2 class="mainview__title">のじりのいい湯と<br>
             ここだけグルメ。</h2>

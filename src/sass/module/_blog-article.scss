@@ -139,10 +139,13 @@
     max-width: rem(600);
     width: 100%;
     margin: rem(50) auto;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
 
     @include mq("md") {
-        display: flex;
-        align-items: center;
+        // display: flex;
+        // align-items: center;
         padding: rem(10) rem(20);
         max-width: rem(890);
         width: 100%;
@@ -155,10 +158,13 @@
     align-items: center;
     gap: rem(8);
     width: 100%;
-    height: rem(30);
-
+    // height: rem(30);
+    width: rem(200);
+    min-width: 200px;
+    justify-content: start;;
     @include mq("md") {
         gap: rem(12);
+        width: rem(432);
     }
 }
 
@@ -176,12 +182,17 @@
     line-height: 1;
     margin: 0 auto rem(10);
     text-align: center;
+    display: inline-block;
+    text-align: left;
+    width: rem(70);
+    // margin: 0 auto rem(10) rem(10);
+    margin: 0 rem(10) rem(10) 0;
 
     @include mq("md") {
         display: inline-block;
         text-align: left;
         width: rem(100);
-        margin-right: auto;
+        // margin-right: auto;
         margin-bottom: 0;
     }
 }
@@ -206,14 +217,17 @@
 }
 
 .blog-author__img {
-    width: rem(130);
-    height: rem(130);
+    // width: rem(130);
+    // height: rem(130);
+    width: 130px;
+    // height: 130px;
 }
 
 .blog-author__img img {
     aspect-ratio: 130 / 130;
     object-fit: cover;
     border-radius: 50%;
+    width: 100%;
 }
 
 .blog-author__namebox {
@@ -225,13 +239,18 @@
     display: block;
     color: $black;
     font-size: rem(24);
+    width: calc(100% - 130px);
+    // width: calc(100% - rem(130));
 }
 
 .blog-author__name span {
     display: block;
     color: $orange;
-    font-size: rem(18);
+    font-size: rem(16);
     margin-bottom: rem(20);
+    @include mq("md"){
+        font-size: rem(18);
+    }
 }
 
 .blog-author__description {
@@ -278,8 +297,11 @@
 }
 
 a.a2a_button_facebook_like.addtoany_special_service {
-    vertical-align: text-top;
+    // vertical-align: text-top;
     text-align: right;
+    margin-top: rem(6);
+    width: rem(68) !important;
+    min-width: 68px !important;
 }
 
 a.a2a_button_twitter_tweet.addtoany_special_service {

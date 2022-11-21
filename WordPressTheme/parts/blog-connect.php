@@ -54,7 +54,8 @@ Template Name: ブログカード
                   ?>
               <?php get_template_part('parts/blog-card'); ?>
 
-              <?php endwhile; ?>
+              <?php endwhile;
+              ?>
             <?php endif; ?>
           </div>
 

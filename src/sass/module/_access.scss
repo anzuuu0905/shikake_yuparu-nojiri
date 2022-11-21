@@ -92,6 +92,7 @@
     line-height: 1.5;
     font-weight: $bold;
     padding-top: rem(10);
+    width: rem(131);
 
     @include mq("md") {
         font-size: rem(17);
@@ -118,6 +119,7 @@
     line-height: 1;
     text-decoration: underline;
     margin-right: rem(13);
+    width: rem(96);
 
     @include mq("md") {
         font-size: rem(16);

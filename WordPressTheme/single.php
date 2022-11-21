@@ -30,12 +30,7 @@
               <div class="blog-article__textbox">
                 <?php the_content(); ?>
               </div>
-
-
-<!-- ADD START-->
             </div>
-<!-- ADD END-->
-
 
 
             <!-- SNS LINK -->
@@ -62,8 +57,10 @@
               <a class="btn-link__blog" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">この人の他の記事を読む</a>
               </div>
             </div>
-            <?php endwhile;
-            endif; ?>
+            <?php 
+              endwhile;
+              wp_reset_postdata();
+              endif; ?>
         </div>
       </section>
       <!-- 関連スタッフブログ -->

@@ -198,3 +198,41 @@ function my_trim($str, $num, $display = true)
     }
   }
 }
+
+// スマホ・PCサイズにより切り替え
+// 検索対象から固定ページは除外する
+function my_query( $query ) {
+// 	// 検索対象から固定ページは除外
+	if(is_search()){
+		$query->set( 'post_type', 'post' );
+	}
+// 	// SPの場合、かつ（フロントページ以外かつメインクエリ）の場合、10件表示とする。
+// 	// if(!is_front_page() && !is_single() && !is_page() && wp_is_mobile() && is_main_query($query)){
+// 	// 	$query->set( 'posts_per_page', '3' );
+// 	// }
+// 	var_dump('is_search');
+// 	var_dump(is_search());
+// 	var_dump('wp_is_mobile');
+// 	var_dump(wp_is_mobile());
+// 	var_dump('is_single');
+// 	var_dump(is_single());
+// 	var_dump('is_page');
+// 	var_dump(is_page());
+// 	var_dump('is_main_query');
+// 	var_dump(is_main_query($query));
+// 	if((is_archive() || is_search()) && !is_front_page() && !is_page()	&& wp_is_mobile() && is_main_query($query)){
+// 		$query->set( 'posts_per_page', '10' );
+// 	}
+// 	return $query;
+}
+add_filter( 'pre_get_posts', 'my_query' );
+
+/*【出力カスタマイズ】クエリーカスタマイズ、ループから非公開記事を除外 */
+function custom_posts() {
+  global $wp_query;
+  if($wp_query->is_admin) return; // 管理画面内は除く
+  if(is_post_type_archive()){ // アーカイブページ
+    $wp_query->query_vars['post_status'] = 'publish'; // 投稿ステータス「公開済」
+  }
+}
+add_filter('pre_get_posts', 'custom_posts');
