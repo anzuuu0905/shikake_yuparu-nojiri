@@ -8,7 +8,7 @@
     padding: rem(25) 0;
 
     @include mq("md") {
-        padding: rem(20) 0 rem(50);
+        padding: rem(40) 0 rem(50);
     }
 }
 
@@ -60,9 +60,12 @@
 
 .blogpage__seach {
     color: $black;
-    font-size: rem(30);
+    font-size: rem(20);
     text-align: center;
     margin-bottom: rem(20);
+    @include mq('md'){
+        font-size: rem(30);
+    }
 }
 
 .blogpage__notfound{

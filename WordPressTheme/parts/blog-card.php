@@ -30,14 +30,14 @@ Template Name: ブログカード
     </figure>
     
   <div class="blog-card__body">
-    <h3 class="blog-card__title"><?php my_trim(get_the_title(), 22); ?></h3>
+    <h3 class="blog-card__title"><?php my_trim(get_the_title(), 18); ?></h3>
     <div class="blog-card__info">
-      <time class="blog-card__data" datetime="<?php the_time('Y-m-d'); ?>"><?php the_date(); ?></time>
+      <time class="blog-card__data" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time("Y.m.d"); ?></time>
       <span class="blog-card__author"><?php the_author_meta('nickname'); ?></span>
     </div>
   </div>
   <?php
-      if(is_front_page() || (is_archive() && !is_category())):
+      if(is_front_page() || is_tag() || is_search() || (is_archive() && !is_category())):
       // カテゴリーのデータを取得
       $cat = get_the_category();
       $cat = $cat[0];

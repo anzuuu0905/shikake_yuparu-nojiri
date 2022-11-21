@@ -19,9 +19,11 @@
     margin: 0 auto;
 
     @include mq("md") {
-        max-width: calc(25% - rem(14) *3 /4);
-        width: 100%;
+        max-width: calc(50% - rem(14) / 2);
         margin: 0;
+    }
+    @include mq("lg") {
+        max-width: calc(25% - rem(14) *3 /4);
     }
 }
 
